@@ -13,7 +13,9 @@ class FormInput extends Component {
     const errors = {};
     const option = { abortEarly: false };
     const { error } = Joi.validate(this.state.data, this.schema, option);
-    if (!error) return null;
+    if (!error) {
+      return null;
+    }
 
     for (let item of error.details) {
       errors[item.path[0]] = item.message;
@@ -32,8 +34,11 @@ class FormInput extends Component {
     const errors = { ...this.state.errors };
     const errorMessage = this.validateProperty(input);
 
-    if (errorMessage) errors[input.name] = errorMessage;
-    else delete errors[input.name];
+    if (errorMessage) {
+      errors[input.name] = errorMessage;
+    } else {
+      delete errors[input.name];
+    }
 
     const data = { ...this.state.data };
 
@@ -47,7 +52,9 @@ class FormInput extends Component {
 
     const errors = this.validate();
     this.setState({ errors: errors || {} });
-    if (errors) return;
+    if (errors) {
+      return;
+    }
     this.submit();
   };
 
