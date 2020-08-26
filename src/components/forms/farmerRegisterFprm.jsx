@@ -1,7 +1,7 @@
 import React from "react";
 import Joi from "joi-browser";
 
-import FormInput from "./reUsableComponents/formComponent";
+import FormInput from "../reUsableComponents/formComponent";
 
 class FarmerRegisterForm extends FormInput {
   state = {
