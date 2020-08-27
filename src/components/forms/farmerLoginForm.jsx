@@ -1,7 +1,7 @@
 import React from "react";
 import Joi from "joi-browser";
 
-import FormInput from "./reUsableComponents/formComponent";
+import FormInput from "../reUsableComponents/formComponent";
 
 class FarmerLoginForm extends FormInput {
   state = {
@@ -28,7 +28,7 @@ class FarmerLoginForm extends FormInput {
         <form onSubmit={this.handleSubmit}>
           {this.renderTextInput("email", "Email", "email")}
           {this.renderTextInput("password", "Password", "password")}
-          {this.renderButton("Sign Up")}
+          {this.renderButton("Login")}
         </form>
       </div>
     );

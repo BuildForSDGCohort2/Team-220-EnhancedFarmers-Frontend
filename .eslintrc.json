@@ -17,10 +17,12 @@
   "rules": {
     "no-console": 0,
     "no-empty": 0,
+    "no-unused-expressions": 1,
     "no-mixed-spaces-and-tabs": 0,
     "no-irregular-whitespace": 0,
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "double"],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }
