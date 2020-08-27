@@ -9,7 +9,7 @@ class FarmRegistrationForm extends FormInput {
       farmer_id: "",
       location: "",
       is_accepted: "",
-      size: ""      
+      size: "",
     },
     errors: {},
   };
@@ -18,7 +18,7 @@ class FarmRegistrationForm extends FormInput {
     farmer_id: Joi.string().required(),
     location: Joi.string().required(),
     // is_accepted: Joi.Boolean().required(),
-    size: Joi.string().required()
+    size: Joi.string().required(),
   };
 
   submit = () => {
@@ -31,7 +31,7 @@ class FarmRegistrationForm extends FormInput {
       <div>
         <form onSubmit={this.handleSubmit}>
           {this.renderTextInput("farmer_id", "farmer_id")}
-           {this.renderTextInput("location", "Location")}
+          {this.renderTextInput("location", "Location")}
           {this.renderTextInput("size", "size")}
           {this.renderButton("Submit")}
         </form>
