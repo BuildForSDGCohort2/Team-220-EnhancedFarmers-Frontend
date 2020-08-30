@@ -9,6 +9,7 @@ import CustomerSignUP from "./components/forms/customerRegisterFormComponent";
 import CustomerLogin from "./components/forms/customerLoginComponet";
 import ProfessionalRegForm from "./components/forms/profetionalRegComponent";
 import ProfessionalLoginForm from "./components/forms/profectionLoginForm";
+import ProductPage from "./components/pages/productsPageComponent";
 
 import "./App.css";
 
@@ -20,7 +21,8 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/farmers/register" component={FarmerRegisterForm} />
           <Route path="/farmers/login" component={FarmerLoginForm} />
-          <Route path="/product/register" component={ProductForm} />
+          <Route path="/products" component={ProductPage} />
+          <Route path="/products/register" component={ProductForm} />
           <Route path="/customer/signup" component={CustomerSignUP} />
           <Route path="/customer/login" component={CustomerLogin} />
           <Route path="/professional/signup" component={ProfessionalRegForm} />
