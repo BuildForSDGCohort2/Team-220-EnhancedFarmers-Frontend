@@ -3,14 +3,15 @@ import Joi from "joi-browser";
 
 import FormInput from "../reUsableComponents/formComponent";
 
-class FarmerRegisterForm extends FormInput {
+class ProfessionalRegForm extends FormInput {
   state = {
     data: {
       email: "",
       fname: "",
       lname: "",
       contact: "",
-      location: "",
+      residence: "",
+      profession: "",
       password: "",
     },
     errors: {},
@@ -21,7 +22,8 @@ class FarmerRegisterForm extends FormInput {
     fname: Joi.string().required(),
     lname: Joi.string().required(),
     contact: Joi.string().required(),
-    location: Joi.string().required(),
+    residence: Joi.string().required(),
+    profession: Joi.string().required(),
     password: Joi.string().min(6).max(20).required(),
   };
 
@@ -38,7 +40,8 @@ class FarmerRegisterForm extends FormInput {
           {this.renderTextInput("fname", "FirstName")}
           {this.renderTextInput("lname", "LastName")}
           {this.renderTextInput("contact", "Contact")}
-          {this.renderTextInput("location", "Location")}
+          {this.renderTextInput("residence", "Residence")}
+          {this.renderTextInput("profession", "Profession")}
           {this.renderTextInput("password", "Password", "password")}
           {this.renderButton("Sign Up")}
         </form>
@@ -47,4 +50,4 @@ class FarmerRegisterForm extends FormInput {
   }
 }
 
-export default FarmerRegisterForm;
+export default ProfessionalRegForm;

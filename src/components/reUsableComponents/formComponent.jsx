@@ -17,7 +17,7 @@ class FormInput extends Component {
       return null;
     }
 
-    for (let item of error.details) {
+    for (const item of error.details) {
       errors[item.path[0]] = item.message;
     }
     return errors;
