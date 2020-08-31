@@ -10,15 +10,15 @@ import CustomerLogin from "./components/forms/customerLoginComponet";
 import ProfessionalRegForm from "./components/forms/profetionalRegComponent";
 import ProfessionalLoginForm from "./components/forms/profectionLoginForm";
 import ProductPage from "./components/pages/productsPageComponent";
-
+import FarmRegistrationForm from "./components/forms/farmRegistrationForm"
 import "./App.css";
-
 function App() {
   return (
     <>
       <div className="sides">
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route path="/farmers/register/farm" component={FarmRegistrationForm} />
           <Route path="/farmers/register" component={FarmerRegisterForm} />
           <Route path="/farmers/login" component={FarmerLoginForm} />
           <Route path="/products" component={ProductPage} />
