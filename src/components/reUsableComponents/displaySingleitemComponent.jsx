@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import { Link } from "react-router-dom";
 
 import "./reusableStylesComponent/cardStyle.css";
+
 function Card(props) {
   const { item } = props;
   return (
