@@ -8,7 +8,6 @@ class FarmRegistrationForm extends FormInput {
     data: {
       farmer_id: "",
       location: "",
-      is_accepted: "",
       size: "",
     },
     errors: {},
@@ -30,9 +29,9 @@ class FarmRegistrationForm extends FormInput {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          {this.renderTextInput("farmer_id", "farmer_id")}
+          {this.renderTextInput("farmer_id", "Farmer")}
           {this.renderTextInput("location", "Location")}
-          {this.renderTextInput("size", "size")}
+          {this.renderTextInput("size", "Size")}
           {this.renderButton("Submit")}
         </form>
       </div>
