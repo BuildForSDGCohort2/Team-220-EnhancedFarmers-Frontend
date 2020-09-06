@@ -3,6 +3,8 @@ import Joi from "joi-browser";
 
 import FormInput from "../reUsableComponents/formComponent";
 
+import "./formStyles/centerContent.css";
+
 class ProductForm extends FormInput {
   state = {
     data: {
@@ -30,14 +32,17 @@ class ProductForm extends FormInput {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        {this.renderTextInput("farmer_id", "FarmerId", "number")}
-        {this.renderTextInput("product_category", "Category")}
-        {this.renderTextInput("quantity", "Quantity", "number")}
-        {this.renderTextInput("price", "Price", "number")}
-        {this.renderTextInput("location", "Location")}
-        {this.renderButton("Register Product")}
-      </form>
+      <div className="content">
+        <h3>Register A Product here </h3>
+        <form onSubmit={this.handleSubmit}>
+          {this.renderTextInput("farmer_id", "FarmerId", "number")}
+          {this.renderTextInput("product_category", "Category")}
+          {this.renderTextInput("quantity", "Quantity", "number")}
+          {this.renderTextInput("price", "Price", "number")}
+          {this.renderTextInput("location", "Location")}
+          {this.renderButton("Register Product")}
+        </form>
+      </div>
     );
   }
 }

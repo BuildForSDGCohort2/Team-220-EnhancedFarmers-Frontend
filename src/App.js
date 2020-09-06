@@ -29,7 +29,7 @@ function App() {
           <Route path="/farmers/register" component={FarmerRegisterForm} />
           <Route path="/farmers/login" component={FarmerLoginForm} />
           <Route exact path="/products" component={ProductPage} />
-          <Route path="/products/register" component={ProductForm} />
+          <Route exact path="/products/register" component={ProductForm} />
           <Route path="/customer/signup" component={CustomerSignUP} />
           <Route path="/customer/login" component={CustomerLogin} />
           <Route path="/professional/signup" component={ProfessionalRegForm} />

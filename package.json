@@ -20,6 +20,10 @@
     "react-scripts": "3.4.3",
     "reactstrap": "^8.5.1"
   },
+  "engines": {
+    "npm": "6.14.4",
+    "node": "10.19.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -3,6 +3,8 @@ import Joi from "joi-browser";
 
 import FormInput from "../reUsableComponents/formComponent";
 
+import "./formStyles/centerContent.css";
+
 class FarmerRegisterForm extends FormInput {
   state = {
     data: {
@@ -32,7 +34,9 @@ class FarmerRegisterForm extends FormInput {
 
   render() {
     return (
-      <div>
+      <div className="content">
+        <h4>You want join us Register Here</h4>
+
         <form onSubmit={this.handleSubmit}>
           {this.renderTextInput("email", "Email", "email")}
           {this.renderTextInput("fname", "FirstName")}

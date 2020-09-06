@@ -3,6 +3,8 @@ import Joi from "joi-browser";
 
 import FormInput from "../reUsableComponents/formComponent";
 
+import "./formStyles/centerContent.css";
+
 class CustomerSignUP extends FormInput {
   state = {
     data: {
@@ -31,13 +33,15 @@ class CustomerSignUP extends FormInput {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        {this.renderTextInput("email", "Email")}
-        {this.renderTextInput("fullName", "FullName")}
-        {this.renderTextInput("contact", "Contact", "number")}
-        {this.renderTextInput("password", "Password", "passord")}
-        {this.renderButton("Sign Up")}
-      </form>
+      <div className="center">
+        <form onSubmit={this.handleSubmit}>
+          {this.renderTextInput("email", "Email")}
+          {this.renderTextInput("fullName", "FullName")}
+          {this.renderTextInput("contact", "Contact", "number")}
+          {this.renderTextInput("password", "Password", "passord")}
+          {this.renderButton("Sign Up")}
+        </form>
+      </div>
     );
   }
 }
