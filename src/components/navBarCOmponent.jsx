@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import "./componentStyles/navbarStyles.css";
 
 const NavBar = () => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light nav-pills">
+  <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <NavLink className="navbar-brand" to="/">
       Home
     </NavLink>
@@ -52,6 +52,7 @@ const NavBar = () => (
             Products
           </NavLink>
         </li>
+
       </ul>
     </div>
   </nav>

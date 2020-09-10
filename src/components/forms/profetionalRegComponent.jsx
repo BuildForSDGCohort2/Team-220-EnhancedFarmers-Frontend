@@ -1,7 +1,12 @@
 import React from "react";
 import Joi from "joi-browser";
+import { toast } from "react-toastify";
 
 import FormInput from "../reUsableComponents/formComponent";
+import { createAProfessional } from "../../services/professionals";
+import auth from "../../services/authServices";
+
+import "./formStyles/centerContent.css";
 
 class ProfessionalRegForm extends FormInput {
   state = {
@@ -14,27 +19,44 @@ class ProfessionalRegForm extends FormInput {
       profession: "",
       password: "",
     },
+    image: null,
     errors: {},
   };
 
   schema = {
-    email: Joi.string().email().required(),
-    fname: Joi.string().required(),
-    lname: Joi.string().required(),
-    contact: Joi.string().required(),
-    residence: Joi.string().required(),
-    profession: Joi.string().required(),
-    password: Joi.string().min(6).max(20).required(),
+    email: Joi.string().email().required().label("Email"),
+    fname: Joi.string().required().label("FirstName"),
+    lname: Joi.string().required().label("LastName"),
+    contact: Joi.string().required().label("Contact"),
+    residence: Joi.string().required().label("Residence"),
+    profession: Joi.string().required().label("Profession"),
+    password: Joi.string().min(6).max(20).required()
+      .label("Password"),
   };
 
-  submit = () => {
-    const { state } = this.props.location;
-    window.location = state ? state.from.pathname : "/";
+  onImageChange = (event) => {
+    this.setState({ image: event.target.files[0] });
   };
 
+  submit = async () => {
+    try {
+      const response = await createAProfessional(this.state.data);
+      auth.loginWithJwt(response.headers["x-access-token"]);
+      window.location = "/";
+    } catch (ex) {
+      if (ex.response && ex.response.status === 400) {
+        const returnErrors = ex.response.data.message;
+        this.setState({ errors: returnErrors });
+        toast.error(this.state.errors);
+      }
+    }
+  };
+
+  // encType="multipart/form-data"
   render() {
     return (
-      <div>
+      <div className="content">
+        <h2> Please register Professional here</h2>
         <form onSubmit={this.handleSubmit}>
           {this.renderTextInput("email", "Email", "email")}
           {this.renderTextInput("fname", "FirstName")}
@@ -43,6 +65,7 @@ class ProfessionalRegForm extends FormInput {
           {this.renderTextInput("residence", "Residence")}
           {this.renderTextInput("profession", "Profession")}
           {this.renderTextInput("password", "Password", "password")}
+          <input onChange={this.onImageChange} type="file" name="image" accept="image/*" />
           {this.renderButton("Sign Up")}
         </form>
       </div>

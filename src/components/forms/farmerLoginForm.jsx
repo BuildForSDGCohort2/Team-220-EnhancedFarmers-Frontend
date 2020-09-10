@@ -4,6 +4,7 @@ import Joi from "joi-browser";
 import FormInput from "../reUsableComponents/formComponent";
 
 import "./formStyles/centerContent.css";
+
 class FarmerLoginForm extends FormInput {
   state = {
     data: {

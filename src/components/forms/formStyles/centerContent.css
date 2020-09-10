@@ -1,6 +1,7 @@
 div.content {
   display: block;
   text-align: center;
+  padding-top: 20px;
 }
 form {
   display: inline-block;
