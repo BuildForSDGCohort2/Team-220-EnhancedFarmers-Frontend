@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import HomePage from "./components/pages/homePageComponent";
 import FarmerRegisterForm from "./components/forms/farmerRegisterFprm";
@@ -12,13 +13,16 @@ import ProfessionalLoginForm from "./components/forms/profectionLoginForm";
 import ProductPage from "./components/pages/productsPageComponent";
 import FarmRegistrationForm from "./components/forms/farmRegistrationForm";
 import NavBar from "./components/navBarCOmponent";
+import ProductDetails from "./components/pages/productDetailsPage";
 
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <>
       <div className="sides">
+        <ToastContainer />
         <NavBar />
         <Switch>
           <Route exact path="/" component={HomePage} />
@@ -28,12 +32,13 @@ function App() {
           />
           <Route path="/farmers/register" component={FarmerRegisterForm} />
           <Route path="/farmers/login" component={FarmerLoginForm} />
+          <Route exact path="/product/:id" component={ProductDetails} />
+          <Route exact path="/products/register" component={ProductForm} />
           <Route exact path="/products" component={ProductPage} />
-          <Route path="/products/register" component={ProductForm} />
           <Route path="/customer/signup" component={CustomerSignUP} />
           <Route path="/customer/login" component={CustomerLogin} />
-          <Route path="/professional/signup" component={ProfessionalRegForm} />
-          <Route path="professional/login" component={ProfessionalLoginForm} />
+          <Route path="/profesional/signup" component={ProfessionalRegForm} />
+          <Route path="profesional/login" component={ProfessionalLoginForm} />
         </Switch>
       </div>
     </>

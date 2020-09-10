@@ -24,8 +24,8 @@ function Card(props) {
               <h4>price</h4>
               {item.price}
             </div>
-            <Link to="/" className="col btn btn-primary">
-              click me
+            <Link to={`/product/${item.id}`} className="col btn btn-success">
+              buy
             </Link>
           </div>
         </div>
