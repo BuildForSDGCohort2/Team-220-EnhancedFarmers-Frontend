@@ -19,7 +19,6 @@ class ProfessionalRegForm extends FormInput {
       profession: "",
       password: "",
     },
-    image: null,
     errors: {},
   };
 
@@ -34,13 +33,9 @@ class ProfessionalRegForm extends FormInput {
       .label("Password"),
   };
 
-  onImageChange = (event) => {
-    this.setState({ image: event.target.files[0] });
-  };
-
   submit = async () => {
     try {
-      const response = await createAProfessional(this.state.data);
+      const response = await createAProfessional(this.state.data, this.state.image);
       auth.loginWithJwt(response.headers["x-access-token"]);
       window.location = "/";
     } catch (ex) {
@@ -52,12 +47,11 @@ class ProfessionalRegForm extends FormInput {
     }
   };
 
-  // encType="multipart/form-data"
   render() {
     return (
       <div className="content">
         <h2> Please register Professional here</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} encType="multipart/form-data">
           {this.renderTextInput("email", "Email", "email")}
           {this.renderTextInput("fname", "FirstName")}
           {this.renderTextInput("lname", "LastName")}
@@ -65,7 +59,7 @@ class ProfessionalRegForm extends FormInput {
           {this.renderTextInput("residence", "Residence")}
           {this.renderTextInput("profession", "Profession")}
           {this.renderTextInput("password", "Password", "password")}
-          <input onChange={this.onImageChange} type="file" name="image" accept="image/*" />
+          {this.renderFileInput()}
           {this.renderButton("Sign Up")}
         </form>
       </div>

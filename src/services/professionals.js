@@ -1,24 +1,26 @@
+/* eslint-disable guard-for-in */
 import https from "./httpServices";
 import { url } from "../config.json";
 
 const proUrl = `${url}/professionals`;
 
-export const createAProfessional = (professional) => {
+export const createAProfessional = (professional, image) => {
   const createUrl = `${proUrl}/signup`;
   const data = new FormData();
 
-  const proData = {
-    email: professional.email,
-    fname: professional.fname,
-    lname: professional.lname,
-    contact: professional.contact,
-    residence: professional.residence,
-    profession: professional.profession,
-    password: professional.password,
-  };
-  data.append("data", JSON.stringify(proData));
-  // data.append("image", image);
-  console.log(data.get("data"));
-  // console.log(data.get("image"));
+  for (const k in professional) {
+    data.append(k, professional[k]);
+  }
+
+  data.append("image", image);
+
   return https.post(createUrl, data);
 };
+
+export const getAllProfessionals = () => {
+  const professionals = https.get(proUrl);
+  return professionals;
+};
+
+export const getSingleProfessional = (proId) => https.get(`${proUrl}/${proId}`);
+export const deleteProfessional = (proId) => https.delete(`${proUrl}/${proId}`);

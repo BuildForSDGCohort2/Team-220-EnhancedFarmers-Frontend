@@ -12,6 +12,7 @@ class FormInput extends Component {
   state = {
     data: {},
     errors: {},
+    image: null
   };
 
   validate = () => {
@@ -106,13 +107,7 @@ class FormInput extends Component {
   // eslint-disable-next-line class-methods-use-this
   renderFileInput() {
     return (
-      <input
-        type="file"
-        className="form-control-file"
-        name="image"
-        accept="image/*"
-        onChange={this.onImageChange}
-      />
+      <input onChange={this.onImageChange} type="file" name="image" accept="image/*" />
     );
   }
 }

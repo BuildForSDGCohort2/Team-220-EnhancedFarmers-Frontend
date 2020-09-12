@@ -5,3 +5,7 @@
   background-color: #f8f9fa;
 }
 /* #f8f9fa */
+.row {
+  margin: 20px;
+  padding: 0.2rem;
+}
