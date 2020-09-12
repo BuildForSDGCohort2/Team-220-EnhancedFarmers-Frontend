@@ -14,6 +14,8 @@ import ProductPage from "./components/pages/productsPageComponent";
 import FarmRegistrationForm from "./components/forms/farmRegistrationForm";
 import NavBar from "./components/navBarCOmponent";
 import ProductDetails from "./components/pages/productDetailsPage";
+import ProfessionalDetails from "./components/pages/professionalDetails";
+import ProfessionalsTable from "./components/pages/professionalsDisplayPage";
 
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -37,8 +39,10 @@ function App() {
           <Route exact path="/products" component={ProductPage} />
           <Route path="/customer/signup" component={CustomerSignUP} />
           <Route path="/customer/login" component={CustomerLogin} />
-          <Route path="/profesional/signup" component={ProfessionalRegForm} />
-          <Route path="profesional/login" component={ProfessionalLoginForm} />
+          <Route exact path="/professional/:id" component={ProfessionalDetails} />
+          <Route exact path="/professionals" component={ProfessionalsTable} />
+          <Route exact path="/professionals/signup" component={ProfessionalRegForm} />
+          <Route path="professionals/login" component={ProfessionalLoginForm} />
         </Switch>
       </div>
     </>
