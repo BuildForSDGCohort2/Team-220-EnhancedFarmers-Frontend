@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-
+import Footer from "./components/pages/Footer";
 import HomePage from "./components/pages/homePageComponent";
 import FarmerRegisterForm from "./components/forms/farmerRegisterFprm";
 import FarmerLoginForm from "./components/forms/farmerLoginForm";
@@ -27,6 +27,7 @@ function App() {
           <Route path="/customer/login" component={CustomerLogin} />
           <Route path="/professional/signup" component={ProfessionalRegForm} />
           <Route path="professional/login" component={ProfessionalLoginForm} />
+          <Footer />
         </Switch>
       </div>
     </>
