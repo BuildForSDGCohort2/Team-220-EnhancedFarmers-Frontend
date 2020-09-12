@@ -19,7 +19,7 @@ class DisplayItems extends Component {
 
   pageData = () => {
     const { data, pageSize, currentPage } = this.state;
-    let dataToUse = data;
+    const dataToUse = data;
 
     const pagination = paginate(dataToUse, currentPage, pageSize);
 

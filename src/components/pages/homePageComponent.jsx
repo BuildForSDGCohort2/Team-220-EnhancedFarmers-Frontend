@@ -5,6 +5,7 @@ import newImage from "../../images/2.jpg";
 import sdg from "../../images/SDG.jpg";
 import andela from "../../images/andela.png";
 
+
 const HomePage = () => {
   return (
     <div

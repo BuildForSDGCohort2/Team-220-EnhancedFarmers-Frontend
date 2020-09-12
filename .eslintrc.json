@@ -17,16 +17,27 @@
   "rules": {
     "no-console": 0,
     "no-empty": 0,
-    "no-unused-expressions": 1,
+    "no-unused-expressions": 0,
     "no-mixed-spaces-and-tabs": 0,
     "no-irregular-whitespace": 0,
     "object-curly-newline": 0,
-    "global-require": 1,
+    "global-require": 0,
     "react/forbid-prop-types": 0,
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
+    "comma-dangle": 0,
+    "no-undef": 0,
+    "operator-linebreak": 0,
+    "no-restricted-syntax": 0,
+    "import/no-dynamic-require": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/prop-types": 0,
+    "react/button-has-type": 0,
+    "import/prefer-default-export": 0,
+    "react/require-default-props": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/state-in-constructor": 0
+    "react/state-in-constructor": 0,
+    "react/prefer-stateless-function": 0
   }
 }

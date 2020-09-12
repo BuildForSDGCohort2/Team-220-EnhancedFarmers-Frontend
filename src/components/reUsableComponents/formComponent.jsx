@@ -1,12 +1,18 @@
+/* eslint-disable react/no-unused-state */
+/* eslint-disable react/no-access-state-in-setstate */
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from "react";
 import Joi from "joi-browser";
 
 import TextInput from "./input";
+import Select from "./select";
+// import FileInput from "./fileInput";
 
 class FormInput extends Component {
   state = {
     data: {},
     errors: {},
+    image: null
   };
 
   validate = () => {
@@ -47,6 +53,10 @@ class FormInput extends Component {
     this.setState({ data, errors });
   };
 
+  onImageChange = (event) => {
+    this.setState({ image: event.target.files[0] });
+  };
+
   handleSubmit = (e) => {
     e.preventDefault();
     const errors = this.validate();
@@ -76,6 +86,28 @@ class FormInput extends Component {
       <button disabled={this.validate()} className="btn btn-primary">
         {action}
       </button>
+    );
+  }
+
+  renderSelect(name, label, options) {
+    const { data, errors } = this.state;
+
+    return (
+      <Select
+        name={name}
+        value={data[name]}
+        label={label}
+        options={options}
+        onChange={this.handleChange}
+        error={errors[name]}
+      />
+    );
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  renderFileInput() {
+    return (
+      <input onChange={this.onImageChange} type="file" name="image" accept="image/*" />
     );
   }
 }

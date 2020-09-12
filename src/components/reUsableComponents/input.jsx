@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function TextInput({ name, error, label, ...otherProps }) {
   return (
@@ -9,5 +10,9 @@ function TextInput({ name, error, label, ...otherProps }) {
     </div>
   );
 }
+TextInput.propTypes = {
+  name: PropTypes.string,
+  label: PropTypes.string,
+};
 
 export default TextInput;

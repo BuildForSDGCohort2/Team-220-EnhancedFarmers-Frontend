@@ -1,0 +1,13 @@
+div.content {
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+form {
+  display: inline-block;
+  background: #55acf3;
+  padding: 1.5em;
+  border-radius: 1em;
+  width: 50vh;
+  align-self: center;
+}

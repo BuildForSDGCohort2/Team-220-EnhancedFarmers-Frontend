@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import { Link } from "react-router-dom";
 
 import "./reusableStylesComponent/cardStyle.css";
+
 function Card(props) {
   const { item } = props;
   return (
@@ -24,8 +24,8 @@ function Card(props) {
               <h4>price</h4>
               {item.price}
             </div>
-            <Link to="/" className="col btn btn-primary">
-              click me
+            <Link to={`/product/${item.id}`} className="col btn btn-success">
+              buy
             </Link>
           </div>
         </div>

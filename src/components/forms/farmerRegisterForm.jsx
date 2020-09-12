@@ -5,10 +5,14 @@ import FormInput from "../reUsableComponents/formComponent";
 
 import "./formStyles/centerContent.css";
 
-class FarmerLoginForm extends FormInput {
+class FarmerRegisterForm extends FormInput {
   state = {
     data: {
       email: "",
+      fname: "",
+      lname: "",
+      contact: "",
+      location: "",
       password: "",
     },
     errors: {},
@@ -16,6 +20,10 @@ class FarmerLoginForm extends FormInput {
 
   schema = {
     email: Joi.string().email().required(),
+    fname: Joi.string().required(),
+    lname: Joi.string().required(),
+    contact: Joi.string().required(),
+    location: Joi.string().required(),
     password: Joi.string().min(6).max(20).required(),
   };
 
@@ -27,15 +35,20 @@ class FarmerLoginForm extends FormInput {
   render() {
     return (
       <div className="content">
-        <h3>Please Login here</h3>
+        <h4>You want join us Register Here</h4>
+
         <form onSubmit={this.handleSubmit}>
           {this.renderTextInput("email", "Email", "email")}
+          {this.renderTextInput("fname", "FirstName")}
+          {this.renderTextInput("lname", "LastName")}
+          {this.renderTextInput("contact", "Contact")}
+          {this.renderTextInput("location", "Location")}
           {this.renderTextInput("password", "Password", "password")}
-          {this.renderButton("Login")}
+          {this.renderButton("Sign Up")}
         </form>
       </div>
     );
   }
 }
 
-export default FarmerLoginForm;
+export default FarmerRegisterForm;
