@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-
+import Footer from "./components/pages/Footer";
 import HomePage from "./components/pages/homePageComponent";
 import FarmerRegisterForm from "./components/forms/farmerRegisterFprm";
 import FarmerLoginForm from "./components/forms/farmerLoginForm";
@@ -39,6 +38,9 @@ function App() {
           <Route exact path="/products" component={ProductPage} />
           <Route path="/customer/signup" component={CustomerSignUP} />
           <Route path="/customer/login" component={CustomerLogin} />
+          <Route path="/professional/signup" component={ProfessionalRegForm} />
+          <Route path="professional/login" component={ProfessionalLoginForm} />
+          <Footer />
           <Route exact path="/professional/:id" component={ProfessionalDetails} />
           <Route exact path="/professionals" component={ProfessionalsTable} />
           <Route exact path="/professionals/signup" component={ProfessionalRegForm} />
