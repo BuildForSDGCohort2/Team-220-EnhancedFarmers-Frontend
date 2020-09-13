@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Footer from "./components/pages/Footer";
+import { ToastContainer } from "react-toastify";
+
 import HomePage from "./components/pages/homePageComponent";
 import FarmerRegisterForm from "./components/forms/farmerRegisterFprm";
 import FarmerLoginForm from "./components/forms/farmerLoginForm";
@@ -15,6 +16,7 @@ import NavBar from "./components/navBarCOmponent";
 import ProductDetails from "./components/pages/productDetailsPage";
 import ProfessionalDetails from "./components/pages/professionalDetails";
 import ProfessionalsTable from "./components/pages/professionalsDisplayPage";
+import Footer from "./components/footerComponent";
 
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -40,12 +42,20 @@ function App() {
           <Route path="/customer/login" component={CustomerLogin} />
           <Route path="/professional/signup" component={ProfessionalRegForm} />
           <Route path="professional/login" component={ProfessionalLoginForm} />
-          <Footer />
-          <Route exact path="/professional/:id" component={ProfessionalDetails} />
+          <Route
+            exact
+            path="/professional/:id"
+            component={ProfessionalDetails}
+          />
           <Route exact path="/professionals" component={ProfessionalsTable} />
-          <Route exact path="/professionals/signup" component={ProfessionalRegForm} />
+          <Route
+            exact
+            path="/professionals/signup"
+            component={ProfessionalRegForm}
+          />
           <Route path="professionals/login" component={ProfessionalLoginForm} />
         </Switch>
+        <Footer />
       </div>
     </>
   );
