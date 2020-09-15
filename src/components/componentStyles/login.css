@@ -1,0 +1,13 @@
+.col-md-6 .card {
+  padding: 2em;
+  margin: auto;
+  border-radius: 1em;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card :hover {
+  position: relative;
+}
