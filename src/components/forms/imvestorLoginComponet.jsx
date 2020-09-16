@@ -3,10 +3,11 @@ import Joi from "joi-browser";
 import { toast } from "react-toastify";
 
 import FormInput from "../reUsableComponents/formComponent";
-import { loginProfessional } from "../../services/authServices";
+import { loginInvestors } from "../../services/authServices";
+
 import "./formStyles/centerContent.css";
 
-class ProfessionalLoginForm extends FormInput {
+class InvestorLoginForm extends FormInput {
   state = {
     data: {
       email: "",
@@ -17,20 +18,20 @@ class ProfessionalLoginForm extends FormInput {
 
   schema = {
     email: Joi.string().email().required(),
-    password: Joi.string().min(6).max(20).required(),
+    password: Joi.string().required(),
   };
 
   submit = async () => {
     const { email, password } = this.state.data;
     try {
-      await loginProfessional(email, password);
+      await loginInvestors(email, password);
       const { state } = this.props.location;
       window.location = state ? state.from.pathname : "/projects";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const returnedErrors = ex.response.data.message;
         this.setState({ errors: returnedErrors });
-        toast.error(this.state.errors);
+        toast.info(this.state.errors);
       }
     }
   };
@@ -38,8 +39,9 @@ class ProfessionalLoginForm extends FormInput {
   render() {
     return (
       <div className="content">
+        <h3>Please Login here</h3>
         <form onSubmit={this.handleSubmit}>
-          {this.renderTextInput("email", "Email", "email")}
+          {this.renderTextInput("email", "Email", "Please Your Email here", "email")}
           {this.renderTextInput("password", "Password", "password")}
           {this.renderButton("Login")}
         </form>
@@ -48,4 +50,4 @@ class ProfessionalLoginForm extends FormInput {
   }
 }
 
-export default ProfessionalLoginForm;
+export default InvestorLoginForm;

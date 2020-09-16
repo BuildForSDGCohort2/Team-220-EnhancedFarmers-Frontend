@@ -6,6 +6,7 @@ import "./reusableStylesComponent/cardStyle.css";
 
 function Card(props) {
   const { item } = props;
+  const links = () => <Link to={`/product/${item.id}`} />;
   return (
     <div className="card mt-5" style={{ width: "18rem" }}>
       <img
@@ -24,9 +25,7 @@ function Card(props) {
               <h4>price</h4>
               {item.price}
             </div>
-            <Link to={`/product/${item.id}`} className="col btn btn-success">
-              buy
-            </Link>
+            <button className="col btn btn-primary" onClick={() => links()}> Buy </button>
           </div>
         </div>
       </div>

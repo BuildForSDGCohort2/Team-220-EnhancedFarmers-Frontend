@@ -4,10 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import "./componentStyles/navbarStyles.css";
 
 const NavBar = () => (
-  <nav
-    className="navbar navbar-expand-lg navbar-light bg-light"
-    style={{ backgroundcolor: "#f5cd79" }}
-  >
+  <nav className="navbar navbar-expand-lg navbar-light bg-primary">
     <NavLink className="navbar-brand" to="/">
       Home
     </NavLink>
@@ -55,6 +52,25 @@ const NavBar = () => (
             Products
           </NavLink>
         </li>
+
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/professionals">
+            Professionals
+          </NavLink>
+        </li>
+
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/investors">
+            Investors
+          </NavLink>
+        </li>
+
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/logins">
+            Login
+          </NavLink>
+        </li>
+
       </ul>
     </div>
   </nav>

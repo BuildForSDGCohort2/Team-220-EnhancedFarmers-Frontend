@@ -6,18 +6,22 @@
   justify-content: flex-start;
   background-color: #535c68;
 }
+
 .headers {
   flex: 3;
   padding: 2em 1em;
   margin-bottom: auto;
 }
+
 .container-fluid {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   margin: 10px 0px 10px 0px;
 }
+
 .container-fluid h1 {
   padding: 20px;
 }
+
 .carousel-item {
   height: 20em;
   filter: brightness(100%);

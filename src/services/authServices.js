@@ -1,11 +1,21 @@
 import jwtDecode from "jwt-decode";
 import http from "./httpServices";
-// import { url } from "../../config.json";
+import { url } from "../config.json";
 
-// export async function loginUser(email, password) {
-//   const { data: jwt } = await http.post(authUrl, { email, password });
-//   localStorage.setItem("token", jwt);
-// }
+export async function loginProfessional(email, password) {
+  const loginUrl = `${url}/professionals/login`;
+  const { data } = await http.post(loginUrl, { email, password });
+  const { token: jwt } = data;
+  localStorage.setItem("token", jwt);
+}
+
+export async function loginInvestors(email, password) {
+  const loginUrl = `${url}/investors/login`;
+  const { data } = await http.post(loginUrl, { email, password });
+  const { token: jwt } = data;
+
+  localStorage.setItem("token", jwt);
+}
 function loginWithJwt(jwt) {
   localStorage.setItem("token", jwt);
 }
