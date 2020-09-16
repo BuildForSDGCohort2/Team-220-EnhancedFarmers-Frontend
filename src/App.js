@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import HomePage from "./components/pages/homePageComponent";
-import FarmerRegisterForm from "./components/forms/farmerRegisterFprm";
+import FarmerRegisterForm from "./components/forms/farmerRegisterForm";
 import FarmerLoginForm from "./components/forms/farmerLoginForm";
 import ProductForm from "./components/forms/productRegisterForm";
 import CustomerSignUP from "./components/forms/customerRegisterFormComponent";
