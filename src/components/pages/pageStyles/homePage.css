@@ -13,7 +13,7 @@
 }
 .container-fluid {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  background-color: white;
+  margin: 10px 0px 10px 0px;
 }
 .container-fluid h1 {
   padding: 20px;
@@ -26,4 +26,62 @@
 .additions {
   text-align: center;
   margin: 60px;
+}
+
+.investors {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #535c68;
+  opacity: 0.8;
+}
+.investors .logo img {
+  height: 5em;
+  margin: 30px;
+}
+.header {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row;
+  border-top: 1px solid #535c68;
+  border-bottom: 1px solid #535c68;
+}
+.btn btn-primary additions {
+  flex: 2;
+  margin: auto;
+}
+.header h1 {
+  flex: 2;
+  margin: auto;
+}
+@media only screen and (max-width: 992px) {
+  .form {
+    width: 50%;
+    padding: 10px;
+  }
+  .orders {
+    width: 80%;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .investors .logo img {
+    height: 4em;
+  }
+  .header h1 {
+    flex: 2;
+    font-size: 30px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .investors .logo img {
+    height: 3em;
+  }
+  .header h1 {
+    flex: 2;
+    font-size: 20px;
+    margin: auto;
+  }
 }
