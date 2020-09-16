@@ -43,9 +43,7 @@ const HomePage = () => (
           />
 
           <div className="carousel-caption d-none d-md-block">
-            <h2>
-              Cabbage project In Progress
-            </h2>
+            <h2>Cabbage project In Progress</h2>
           </div>
         </div>
         <div className="carousel-item">
@@ -75,9 +73,7 @@ const HomePage = () => (
     <h1> About Us </h1>
 
     <div className="upper bg-secondary">
-      <div
-        className="headers"
-      >
+      <div className="headers">
         <h6 style={{ color: "#ecf0f1" }}>WELCOME TO</h6>
         <h2 style={{ color: "#badc58" }}>
           Enhanced
@@ -94,7 +90,32 @@ const HomePage = () => (
         </Link>
       </div>
     </div>
-
+    <div className="header">
+      <h1>Do you want to become our investor !</h1>
+      <Link to="/farmers/register" className="btn btn-primary additions">
+        Sign Up
+      </Link>
+    </div>
+    <div className="investors">
+      <div className="logo">
+        <img
+          src={require("../../images/andela.png")}
+          alt={"../../images/andela.png"}
+        />
+      </div>
+      <div className="logo">
+        <img
+          src={require("../../images/SDG.jpg")}
+          alt={"../../images/andela.png"}
+        />
+      </div>
+      <div className="logo">
+        <img
+          src={require("../../images/facebook.png")}
+          alt={"../../images/andela.png"}
+        />
+      </div>
+    </div>
   </div>
 );
 
