@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import HomePage from "./components/pages/homePageComponent";
@@ -22,59 +22,72 @@ import InvestorRegForm from "./components/forms/investorSignUpForm";
 import investorsTable from "./components/pages/investorsPage";
 import LoginPageLinks from "./components/loginComponent";
 import InvestorLoginForm from "./components/forms/imvestorLoginComponet";
+import FarmersPage from "./components/pages/farmersPageComponent";
 
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
+import FarmerDetails from "./components/pages/farmerDetailsPage";
+import ApproveFarmer from "./components/pages/approveFarmer";
 
 function App() {
   return (
     <>
       <div className="sides">
         <ToastContainer />
-        <NavBar />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/logins" component={LoginPageLinks} />
-          <Route
-            path="/farmers/register/farm"
-            component={FarmRegistrationForm}
-          />
+        <BrowserRouter>
+          <Switch>
+            <NavBar />
 
-          {/* Projects  */}
+            <Route exact path="/" component={HomePage} />
+            <Route path="/logins" component={LoginPageLinks} />
+            <Route
+              path="/farmers/register/farm"
+              component={FarmRegistrationForm}
+            />
 
-          <Route path="/projects" component={ProjectsPage} />
+            {/* Projects  */}
 
-          <Route path="/farmers/login" component={FarmerLoginForm} />
-          <Route path="/farmers/register" component={FarmerRegisterForm} />
+            <Route path="/projects" component={ProjectsPage} />
 
-          <Route path="/investors/register" component={InvestorRegForm} />
-          <Route path="/investors/login" component={InvestorLoginForm} />
-          <Route path="/investors" component={investorsTable} />
+            {/* farmers */}
 
-          {/* products */}
+            <Route path="/farmers/:id/approve" component={ApproveFarmer} />
+            <Route exact path="/farmers/login" component={FarmerLoginForm} />
+            <Route path="/farmers/register" component={FarmerRegisterForm} />
 
-          <Route exact path="/product/:id" component={ProductDetails} />
-          <Route exact path="/products/register" component={ProductForm} />
-          <Route exact path="/products" component={ProductPage} />
+            <Route exact path="/farmers/:id" component={FarmerDetails} />
+            <Route path="/farmers" component={FarmersPage} />
 
-          {/* Customers down */}
+            <Route path="/investors/register" component={InvestorRegForm} />
+            <Route path="/investors/login" component={InvestorLoginForm} />
+            <Route path="/investors" component={investorsTable} />
 
-          <Route path="/customer/signup" component={CustomerSignUP} />
-          <Route path="/customer/login" component={CustomerLogin} />
+            {/* products */}
 
-          {/* Proffesionals down */}
-          <Route
-            path="/professionals/signup"
-            component={ProfessionalRegForm}
-          />
-          <Route path="/professionals/login" component={ProfessionalLoginForm} />
-          <Route
-            exact
-            path="/professionals/:id"
-            component={ProfessionalDetails}
-          />
-          <Route exact path="/professionals" component={ProfessionalsTable} />
-        </Switch>
+            <Route exact path="/product/:id" component={ProductDetails} />
+            <Route exact path="/products/register" component={ProductForm} />
+            <Route exact path="/products" component={ProductPage} />
+
+            {/* Customers down */}
+
+            <Route path="/customer/signup" component={CustomerSignUP} />
+            <Route path="/customer/login" component={CustomerLogin} />
+
+            {/* Proffesionals down */}
+            <Route
+              path="/professionals/signup"
+              component={ProfessionalRegForm}
+            />
+            <Route path="/professionals/login" component={ProfessionalLoginForm} />
+            <Route
+              exact
+              path="/professionals/:id"
+              component={ProfessionalDetails}
+            />
+            <Route exact path="/professionals" component={ProfessionalsTable} />
+          </Switch>
+        </BrowserRouter>
+
         <Footer />
       </div>
     </>
