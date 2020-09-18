@@ -16,9 +16,11 @@ const NavBar = () => (
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      style={{ Color: "white" }}
     >
       <span className="navbar-toggler-icon" />
     </button>
+    
 
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mr-auto">
@@ -70,7 +72,6 @@ const NavBar = () => (
             Login
           </NavLink>
         </li>
-
       </ul>
     </div>
   </nav>

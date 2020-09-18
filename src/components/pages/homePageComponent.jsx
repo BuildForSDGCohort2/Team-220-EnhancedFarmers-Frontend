@@ -27,6 +27,7 @@ const HomePage = () => (
             className="d-block w-100"
             src={require("../../images/Spinach.jpg")}
             alt="Cabbage Garden"
+            style={{ filter: "brightness(70%)" }}
           />
 
           <div className="carousel-caption d-none d-md-block">
@@ -35,11 +36,12 @@ const HomePage = () => (
             </h2>
           </div>
         </div>
-        <div className="carousel-item">
+        <div className="carousel-item" style={{ opacity: "0.6" }}>
           <img
             className="d-block w-100"
             src={require("../../images/cabbages.jpeg")}
             alt="Cabbage Project"
+            style={{ filter: "brightness(70%)" }}
           />
 
           <div className="carousel-caption d-none d-md-block">
@@ -51,6 +53,7 @@ const HomePage = () => (
             className="d-block w-100"
             src={require("../../images/maize1.jpeg")}
             alt="Third slide"
+            style={{ filter: "brightness(60%)" }}
           />
           <div className="carousel-caption d-none d-md-block">
             <h2>
@@ -65,6 +68,7 @@ const HomePage = () => (
             className="d-block w-100"
             src={require("../../images/chicken.jpeg")}
             alt="Poutry Project"
+            style={{ filter: "brightness(60%)" }}
           />
         </div>
       </div>
