@@ -42,13 +42,13 @@ class investorsTable extends CompleteTable {
      this.setState({ items: investors });
      try {
        const response = await deleteInvestor(investor.id);
-       toast.error(response.data.message);
+       toast.success(response.data.message);
      } catch (ex) {
        if (ex.response && ex.response.status === 404) {
-         toast.error("investor is not found or it was deleted");
+         toast.info("investor is not found or it was deleted");
        }
        if (ex.response && ex.response.status === 401) {
-         toast.error("Sorry! You have no right to delete a investor");
+         toast.info("Sorry! You have no right to delete a investor");
        }
 
        this.setState({ items: allItems });

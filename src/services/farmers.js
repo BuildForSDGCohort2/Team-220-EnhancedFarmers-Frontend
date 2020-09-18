@@ -17,6 +17,12 @@ export const createFarmer = (farmer, image) => {
   return https.post(createUrl, data);
 };
 
-export const getAllfarmers = () => https.get(farmerUrl);
+export const approveFarmer = (farmerId, isAdmin) => {
+  const updateUrl = `${farmerUrl}/${farmerId}/approve`;
 
-export const deletefarmer = (farmerId) => https.delete(`${farmerUrl}/${farmerId}`);
+  return https.patch(updateUrl, isAdmin);
+};
+
+export const getAllFarmers = () => https.get(farmerUrl);
+
+export const deleteFarmer = (farmerId) => https.delete(`${farmerUrl}/${farmerId}`);

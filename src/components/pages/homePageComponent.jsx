@@ -91,28 +91,33 @@ const HomePage = () => (
       </div>
     </div>
     <div className="header">
-      <h1>Do you want to become our investor !</h1>
-      <Link to="/farmers/register" className="btn btn-primary additions">
-        Sign Up
-      </Link>
+      <h1>Our Investors!</h1>
+
     </div>
     <div className="investors">
       <div className="logo">
         <img
           src={require("../../images/andela.png")}
-          alt={"../../images/andela.png"}
+          alt="../../images/andela.png"
         />
       </div>
       <div className="logo">
         <img
           src={require("../../images/SDG.jpg")}
-          alt={"../../images/andela.png"}
+          alt="../../images/andela.png"
         />
       </div>
       <div className="logo">
         <img
           src={require("../../images/facebook.png")}
-          alt={"../../images/andela.png"}
+          alt="../../images/andela.png"
+        />
+      </div>
+
+      <div className="logo">
+        <img
+          src={require("../../images/facebook.png")}
+          alt="../../images/andela.png"
         />
       </div>
     </div>
