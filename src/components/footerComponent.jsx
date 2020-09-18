@@ -3,17 +3,16 @@ import "./componentStyles/footer.css";
 import { Link } from "react-router-dom";
 
 const Footer = () => (
-  <footer
-    className="page-footer font-small indigo"
-    style={{ backgroundColor: "#535c68", color: "white" }}
-  >
+  <footer className="page-footer font-small bg-primary">
     <div className="container text-center text-md-left">
       <div className="row">
         <div
           className="col-md-4
          mx-auto"
         >
-          <h5 className="font-weight-bold text-uppercase mt-3 mb-4">PAGES</h5>
+          <h5 className="font-weight-bold text-uppercase mt-3 mb-4 text-white">
+            PAGES
+          </h5>
 
           <ul className="list-unstyled">
             <li>
@@ -22,12 +21,12 @@ const Footer = () => (
               </Link>
             </li>
             <li>
-              <Link className="page" to="/">
+              <Link className="page" to="/farmers/register">
                 Sign Up
               </Link>
             </li>
             <li>
-              <Link className="page" to="/">
+              <Link className="page" to="/logins">
                 Log In
               </Link>
             </li>
@@ -37,7 +36,7 @@ const Footer = () => (
         <hr className="clearfix w-100 d-md-none" />
 
         <div className="col-md-4 mx-auto">
-          <h5 className="font-weight-bold text-uppercase mt-3 mb-4">
+          <h5 className="font-weight-bold text-uppercase mt-3 mb-4 text-white">
             SERVICES
           </h5>
 
@@ -60,7 +59,7 @@ const Footer = () => (
         <hr className="clearfix w-100 d-md-none" />
 
         <div className="col-md-4 mx-auto">
-          <h5 className="font-weight-bold text-uppercase mt-3 mb-4">
+          <h5 className="font-weight-bold text-uppercase mt-3 mb-4 text-white">
             Contact Us
           </h5>
           <p className="page">kyakusahmed@outlook.com</p>
@@ -69,19 +68,10 @@ const Footer = () => (
       </div>
     </div>
 
-    <div
-      className="footer-copyright text-center py-3"
-      style={{ backgroundColor: "#8395a7" }}
-    >
+    <div className="footer-copyright text-center py-3 border-top border-white text-white">
       © 2020 copyright
     </div>
   </footer>
 );
 
 export default Footer;
-
-{
-  /* <p className="m-0 text-center text-white">
-  Copyright © Andela build for sustainble goal development 2020
-</p> */
-}

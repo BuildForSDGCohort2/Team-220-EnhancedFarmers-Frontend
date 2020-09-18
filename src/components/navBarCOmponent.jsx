@@ -5,7 +5,7 @@ import "./componentStyles/navbarStyles.css";
 
 const NavBar = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-primary">
-    <NavLink className="navbar-brand" to="/">
+    <NavLink className="navbar-brand text-white" to="/">
       Home
     </NavLink>
     <button
@@ -16,17 +16,15 @@ const NavBar = () => (
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
-      style={{ Color: "white" }}
     >
       <span className="navbar-toggler-icon" />
     </button>
-    
 
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mr-auto">
         <li className="nav-item dropdown">
           <Link
-            className="nav-link dropdown-toggle"
+            className="nav-link dropdown-toggle text-white"
             to="/"
             id="navbarDropdown"
             role="button"
@@ -44,31 +42,34 @@ const NavBar = () => (
               Vegitables
             </Link>
             <div className="dropdown-item" />
-            <Link className="dropdown-item" to="/">
+            <Link className="dropdown-item text-green" to="/">
               Fish
             </Link>
           </div>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/products">
+          <NavLink className="nav-link text-white" to="/products">
             Products
           </NavLink>
         </li>
 
         <li className="nav-item">
-          <NavLink className="nav-link" to="/professionals">
+          <NavLink className="nav-link text-white" to="/professionals">
             Professionals
           </NavLink>
         </li>
 
         <li className="nav-item">
-          <NavLink className="nav-link" to="/investors">
+          <NavLink className="nav-link text-white" to="/investors">
             Investors
           </NavLink>
         </li>
 
         <li className="nav-item">
-          <NavLink className="nav-link" to="/logins">
+          <NavLink
+            className="nav-link text-white justify-content-end"
+            to="/logins"
+          >
             Login
           </NavLink>
         </li>
