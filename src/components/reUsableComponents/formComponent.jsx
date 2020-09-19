@@ -110,6 +110,21 @@ class FormInput extends Component {
       <input onChange={this.onImageChange} type="file" name="image" accept="image/*" />
     );
   }
+  
+  renderLargeText(name,label){
+    return (
+      <>
+      <label>{label}</label>
+      <textarea 
+       name={name}
+       onChange={this.handleChange}
+       rows="4"
+       cols="25"
+       />
+      </>
+      )
+    
+  }
 }
 
 export default FormInput;
