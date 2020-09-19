@@ -35,6 +35,8 @@
     "react/prop-types": 0,
     "react/button-has-type": 0,
     "guard-for-in": 0,
+    "declaration-colon-newline-afte": 0,
+    "value-list-comma-newline-after": 0,
     "import/prefer-default-export": 0,
     "react/require-default-props": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],

@@ -70,9 +70,9 @@ class FarmersPage extends CompleteTable {
        const { user } = this.props;
        if (user && user.isAdmin) this.columns.push(this.delete);
        return (
-         <>
+         <div className="container bg-light">
            { this.renderTable()}
-         </>
+         </div>
        );
      }
 }
