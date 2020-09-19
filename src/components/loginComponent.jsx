@@ -38,12 +38,12 @@ const LoginPageLinks = () => (
       <div className="col-md-6">
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title btn btn-success">Card title</h5>
+            <h5 className="card-title btn btn-success">Farmers</h5>
             <p className="card-text">
               Some quick example text to build on the card
               title and make up the bulk of the cards content.
             </p>
-            <Link to="/" className="btn btn-success">Login</Link>
+            <Link to="/farmers/login" className="btn btn-success">Login</Link>
 
           </div>
         </div>

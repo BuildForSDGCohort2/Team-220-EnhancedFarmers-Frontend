@@ -42,6 +42,7 @@
   height: 5em;
   margin: 30px;
 }
+
 .header {
   display: flex;
   justify-content: flex-start;
@@ -49,17 +50,17 @@
   border-top: 1px solid #535c68;
   border-bottom: 1px solid #535c68;
 }
+
 .btn btn-primary additions {
   flex: 2;
   margin: auto;
 }
+
 .header h1 {
   flex: 2;
   margin: auto;
 }
 
-/* @media only screen and (max-width: 992px) {
-} */
 
 @media only screen and (max-width: 600px) {
   .investors .logo img {

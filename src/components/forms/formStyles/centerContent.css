@@ -3,6 +3,13 @@ div.content {
   text-align: center;
   padding-top: 20px;
 }
+
+.content h2 {
+  font-weight: bold;
+  color: #55acf3;
+  margin: 20px;
+}
+
 form {
   display: inline-block;
   background: #55acf3;
@@ -10,4 +17,15 @@ form {
   border-radius: 1em;
   width: 50vh;
   align-self: center;
+}
+
+.container .style {
+  display: block;
+  width: 30%;
+  margin: 0 auto;
+  padding: 20px;
+  float: none;
+  margin-bottom: 2em;
+  border-radius: 1rem;
+  background-color: rgb(43, 226, 195);
 }

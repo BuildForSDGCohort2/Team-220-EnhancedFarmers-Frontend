@@ -16,6 +16,15 @@ export async function loginInvestors(email, password) {
 
   localStorage.setItem("token", jwt);
 }
+
+export async function loginFarmer(email, password) {
+  const loginUrl = `${url}/farmers/login`;
+  const { data } = await http.post(loginUrl, { email, password });
+  const { token: jwt } = data;
+
+  localStorage.setItem("token", jwt);
+}
+
 function loginWithJwt(jwt) {
   localStorage.setItem("token", jwt);
 }

@@ -65,11 +65,18 @@ const NavBar = () => (
           </NavLink>
         </li>
 
-        <li className="nav-item">
+        <li className="nav-item"
           <NavLink
             className="nav-link text-white justify-content-end"
             to="/logins"
           >
+          <NavLink className="nav-link" to="/farmers">
+            Farmers
+          </NavLink>
+        </li>
+
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/logins">
             Login
           </NavLink>
         </li>
