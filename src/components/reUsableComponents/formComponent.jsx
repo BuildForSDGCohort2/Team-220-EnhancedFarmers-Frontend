@@ -6,6 +6,7 @@ import Joi from "joi-browser";
 
 import TextInput from "./input";
 import Select from "./select";
+import { Label } from "reactstrap";
 // import FileInput from "./fileInput";
 
 class FormInput extends Component {
@@ -108,7 +109,7 @@ class FormInput extends Component {
   renderFileInput(name) {
     return (
       <>
-        <label> {name} </label>
+        <label htmlFor={Label}> {name} </label>
         <input
           onChange={this.onImageChange}
           type="file"
@@ -122,7 +123,7 @@ class FormInput extends Component {
   renderLargeText(name, label) {
     return (
       <>
-        <label>{label}</label>
+        <label htmlFor={label}>{label}</label>
         <textarea name={name} onChange={this.handleChange} rows="4" cols="25" />
       </>
     );

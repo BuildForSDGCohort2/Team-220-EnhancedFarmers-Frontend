@@ -96,7 +96,6 @@ const HomePage = () => (
     </div>
     <div className="header">
       <h1>Our Investors!</h1>
-
     </div>
     <div className="investors">
       <div className="logo">

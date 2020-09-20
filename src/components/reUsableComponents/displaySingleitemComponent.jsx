@@ -6,7 +6,7 @@ import "./reusableStylesComponent/cardStyle.css";
 
 function Card(props) {
   const { item } = props;
-  const links = () => <Link to={`/product/${item.id}`} />;
+
   return (
     <div className="card mt-5" style={{ width: "18rem" }}>
       <img

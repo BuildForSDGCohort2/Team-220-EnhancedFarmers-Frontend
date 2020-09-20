@@ -1,9 +1,8 @@
-.dropdown-menu [navbarDropdown] Link:hover {
-  background-color: green;
-}
 .dropdown-menu .dropdown-item {
   color: black;
+  background-color: green;
 }
+
 .nav-link {
   color: white;
 }

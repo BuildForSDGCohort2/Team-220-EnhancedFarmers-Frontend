@@ -37,8 +37,8 @@ function App() {
 
   useEffect(() => {
     const getUser = async () => {
-      const user = await auth.getCurrentUser();
-      setUser(user);
+      const currentUser = await auth.getCurrentUser();
+      setUser(currentUser);
     };
     getUser();
   }, []);
