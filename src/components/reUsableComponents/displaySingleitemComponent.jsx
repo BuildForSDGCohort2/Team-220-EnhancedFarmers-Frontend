@@ -15,18 +15,18 @@ function Card(props) {
         alt=""
       />
       <div className="card-body">
-        <div className="container">
-          <div className="row">
-            <div className="col-">
-              <h4>Quantity</h4>
-              {item.quantity}
-            </div>
-            <div className="col">
-              <h4>price</h4>
-              {item.price}
-            </div>
-            <button className="col btn btn-primary" onClick={() => links()}> Buy </button>
+        <div className="row">
+          <div className="col">
+            <h4>Quantity</h4>
+            {item.quantity}
           </div>
+          <div className="col">
+            <h4>price</h4>
+            {item.price}
+          </div>
+          <Link to={`/product/${item.id}`} className="col btn btn-primary">
+            <span style={{ textAlign: "center", marginTop: 10 }}>Buy</span>
+          </Link>
         </div>
       </div>
     </div>
