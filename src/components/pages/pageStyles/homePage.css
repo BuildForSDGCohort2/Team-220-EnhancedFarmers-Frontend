@@ -52,7 +52,7 @@
   border-bottom: 1px solid #535c68;
 }
 
-.additions {
+.btn .btn-primary.additions {
   flex: 2;
   margin: auto;
 }
@@ -84,6 +84,6 @@
   }
 }
 
-.d-block {
+.d-block .w-100 {
   filter: brightness(70%);
 }

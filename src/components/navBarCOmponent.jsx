@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 
 import "./componentStyles/navbarStyles.css";
 
-const NavBar = () => (
+const NavBar = ({ user }) => (
   <nav className="navbar navbar-expand-lg navbar-light bg-primary">
     <NavLink className="navbar-brand text-white" to="/">
       Home
@@ -52,36 +52,46 @@ const NavBar = () => (
             Products
           </NavLink>
         </li>
+        {!user && (
+          <>
+            <li className="nav-item">
+              <NavLink className="nav-link text-white" to="/logins">
+                Login
+              </NavLink>
+            </li>
+          </>
+        )}
+        {user && user.isAdmin && (
+          <>
+            <li className="nav-item">
+              <NavLink className="nav-link text-white" to="/professionals">
+                Professionals
+              </NavLink>
+            </li>
 
-        <li className="nav-item">
-          <NavLink className="nav-link text-white" to="/professionals">
-            Professionals
-          </NavLink>
-        </li>
+            <li className="nav-item">
+              <NavLink className="nav-link text-white" to="/investors">
+                Investors
+              </NavLink>
+            </li>
 
-        <li className="nav-item">
-          <NavLink className="nav-link text-white" to="/investors">
-            Investors
-          </NavLink>
-        </li>
+            <li className="nav-item">
+              <NavLink className="nav-link text-white" to="/projects">
+                Projects
+              </NavLink>
+            </li>
+          </>
+        )}
 
-        <li className="nav-item">
-          <NavLink className="nav-link text-white" to="/projects">
-            Projects
-          </NavLink>
-        </li>
-
-        <li className="nav-item">
-          <NavLink className="nav-link text-white" to="/logins">
-            Login
-          </NavLink>
-        </li>
-
-        <li className="nav-item">
-          <NavLink className="nav-link text-white" to="/projects">
-            Projects
-          </NavLink>
-        </li>
+        {user && (
+          <>
+            <li className="nav-item">
+              <NavLink className="nav-link text-white" to="/logout">
+                Sign Out
+              </NavLink>
+            </li>
+          </>
+        )}
       </ul>
     </div>
   </nav>

@@ -31,6 +31,7 @@ import ApproveFarmer from "./components/pages/approveFarmer";
 
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
+import LogOut from "./components/logoutComponet";
 
 function App() {
   const [user, setUser] = useState({});
@@ -42,15 +43,16 @@ function App() {
     };
     getUser();
   }, []);
-  console.log(user);
+
   return (
     <>
       <div className="sides">
         <ToastContainer />
-        <NavBar />
+        <NavBar user={user} />
 
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route path="/logout" component={LogOut} />
           <Route path="/logins" component={LoginPageLinks} />
           <Route
             path="/farmers/register/farm"
@@ -60,6 +62,7 @@ function App() {
           {/* Projects  */}
           <Route path="/projects/create" component={ProjectCreation} />
           <Route
+            exact
             path="/projects"
             render={(props) => <ProjectsPage {...props} user={user} />}
           />
@@ -79,9 +82,12 @@ function App() {
 
           {/* products */}
 
-          <Route exact path="/product/:id" component={ProductDetails} />
           <Route exact path="/products/register" component={ProductForm} />
-          <Route exact path="/products" component={ProductPage} />
+          <Route exact path="/product/:id" component={ProductDetails} />
+          <Route
+            path="/products"
+            render={(props) => <ProductPage {...props} user={user} />}
+          />
 
           {/* Customers down */}
 

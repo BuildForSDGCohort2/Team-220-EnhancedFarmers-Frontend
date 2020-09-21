@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./reusableStylesComponent/cardStyle.css";
 
 function Card(props) {
-  const { item } = props;
+  const { item, user, onDelete } = props;
 
   return (
     <div className="card mt-5" style={{ width: "18rem" }}>
@@ -14,7 +14,7 @@ function Card(props) {
         className="card-img-top"
         alt=""
       />
-      <div className="card-body">
+      <div className="card-body m-0.5">
         <div className="row">
           <div className="col">
             <h4>Quantity</h4>
@@ -24,9 +24,32 @@ function Card(props) {
             <h4>price</h4>
             {item.price}
           </div>
-          <Link to={`/product/${item.id}`} className="col btn btn-primary">
-            <span style={{ textAlign: "center", marginTop: 10 }}>Buy</span>
-          </Link>
+          <div className="col- ">
+            <h4>price</h4>
+            {item.price}
+          </div>
+        </div>
+        <div className="row">
+          {user && user.isAdmin ? (
+            <>
+              <div className="col">
+                <Link className="btn btn-primary " to={`/products/${item.id}`}>
+                  Buy
+                </Link>
+              </div>
+
+              <div className="col">
+                <button
+                  className="btn btn-danger"
+                  onClick={() => onDelete(item)}
+                >
+                  Delete
+                </button>
+              </div>
+            </>
+          ) : (
+            <Link to={`/products/${item.id}`}> Buy</Link>
+          )}
         </div>
       </div>
     </div>
