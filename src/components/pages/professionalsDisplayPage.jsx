@@ -48,7 +48,7 @@ class ProfessionalsTable extends CompleteTable {
     this.setState({ items: professionals });
     try {
       const response = await deleteProfessional(professional.id);
-      toast.error(response.data.message);
+      toast.success(response.data.message);
     } catch (ex) {
       if (ex.response && ex.response.status === 404) {
         toast.error("professional is not found or it was deleted");

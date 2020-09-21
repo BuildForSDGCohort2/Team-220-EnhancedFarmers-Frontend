@@ -29,15 +29,17 @@ class ProfessionalRegForm extends FormInput {
     contact: Joi.string().required().label("Contact"),
     residence: Joi.string().required().label("Residence"),
     profession: Joi.string().required().label("Profession"),
-    password: Joi.string().min(6).max(20).required()
-      .label("Password"),
+    password: Joi.string().min(6).max(20).required().label("Password"),
   };
 
   submit = async () => {
     try {
-      const response = await createAProfessional(this.state.data, this.state.image);
+      const response = await createAProfessional(
+        this.state.data,
+        this.state.image
+      );
       auth.loginWithJwt(response.headers["x-access-token"]);
-      window.location = "/";
+      window.location = "/projects";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const returnErrors = ex.response.data.message;
