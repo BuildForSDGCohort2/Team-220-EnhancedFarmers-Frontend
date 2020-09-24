@@ -51,6 +51,14 @@
   border-top: 1px solid #535c68;
   border-bottom: 1px solid #535c68;
 }
+.carousel-caption {
+  width: 550px;
+  left: 15%;
+  top: 50% !important;
+  transform: translateY(-50%);
+  text-align: center;
+  bottom: initial;
+}
 
 .btn btn-primary additions {
   flex: 2;
@@ -62,26 +70,84 @@
   margin: auto;
 }
 
+@media only screen and (max-width: 922px) {
+  .investors {
+    justify-self: center;
+  }
+  .investors .logo img {
+    height: 4em;
+    margin: 10px;
+  }
+  .container-fluid {
+    text-align: center;
+  }
+  .header h1 {
+    flex: 2;
+    font-size: 25px;
+    margin: auto;
+  }
+  .container-fluid h1 {
+    font-size: 25px;
+    margin: auto;
+  }
+}
 
 @media only screen and (max-width: 600px) {
+  .investors {
+    flex-direction: column;
+  }
+  .investors .logo {
+    text-align: center;
+    border-bottom: 1px solid #535c68;
+  }
   .investors .logo img {
     height: 4em;
   }
   .header h1 {
     flex: 2;
-    font-size: 30px;
+    font-size: 25px;
     margin: auto;
+  }
+  .header {
+    text-align: center;
+  }
+  .container-fluid h1 {
+    font-size: 25px;
+  }
+  .upper {
+    flex-flow: column;
+  }
+  .carousel-item {
+    background-color: crimson;
+    height: 10em;
+  }
+  .additions {
+    margin: 20px;
   }
 }
 
 @media only screen and (max-width: 400px) {
-  .investors .logo img {
-    height: 3em;
+  .investors {
+    flex-direction: column;
+  }
+  .investors .logo {
+    text-align: center;
+    border-bottom: 1px solid #535c68;
+  }
+  .header {
+    text-align: center;
+  }
+  .carousel-item {
+    background-color: crimson;
+    height: 6em;
   }
   .header h1 {
     flex: 2;
     font-size: 20px;
     margin: auto;
+  }
+  .headers h2 {
+    font-size: 22px;
   }
 }
 .d-block w-100 {

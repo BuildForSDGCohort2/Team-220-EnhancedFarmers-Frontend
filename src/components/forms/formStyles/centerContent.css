@@ -6,26 +6,149 @@ div.content {
 
 .content h2 {
   font-weight: bold;
-  color: #55acf3;
+  color: #2d3436;
   margin: 20px;
+}
+.content {
+  flex: 2;
 }
 
 form {
   display: inline-block;
-  background: #55acf3;
+  background: whitesmoke;
   padding: 1.5em;
-  border-radius: 1em;
-  width: 50vh;
+  width: 80%;
   align-self: center;
+  border: 2px solid #2d3436;
+  border-radius: 10px;
+}
+form Input {
+  width: 100%;
+  box-sizing: border-box;
+}
+form Button {
+  margin: 25px;
+}
+.first {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.container .style {
-  display: block;
-  width: 30%;
-  margin: 0 auto;
-  padding: 20px;
-  float: none;
-  margin-bottom: 2em;
-  border-radius: 1rem;
-  background-color: rgb(43, 226, 195);
+.container .first .style {
+  flex: 1;
+  margin: 2px;
+  color: #2d3436;
+  background-color: white;
+  border: 2px solid #2d3436;
+  border-radius: 10px;
+}
+.body {
+  height: 10px;
+}
+.farmRegistration {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: -40px;
+}
+
+.farmRegistration form {
+  width: 40%;
+  margin: 40px;
+}
+.farmRegistration form h2 {
+  text-align: center;
+  margin: 20px;
+}
+
+@media only screen and (max-width: 922px) {
+  .container {
+    flex-direction: column;
+  }
+  .first {
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+  }
+  form {
+    width: 100%;
+    border: 2px solid #2d3436;
+    border-radius: 10px;
+  }
+  form Input {
+    width: 100%;
+  }
+  .container .first .style {
+    border: 2px solid#2d3436;
+    border-radius: 10px;
+  }
+  .farmRegistration form {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .first {
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+  }
+  form {
+    width: 100%;
+    border: 2px solid #2d3436;
+    border-radius: 10px;
+  }
+  form Input {
+    width: 100%;
+  }
+  .container .first .style {
+    border: 2px solid#2d3436;
+    border-radius: 10px;
+  }
+  .farmRegistration form {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    flex-direction: column;
+  }
+  .first {
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+  }
+  form {
+    width: 100%;
+    margin: 0px;
+    border-radius: unset;
+    box-sizing: border-box;
+  }
+  form Input {
+    width: 100%;
+  }
+  .container .first .style {
+    border: 2px solid#2d3436;
+    border-radius: 10px;
+  }
+  .farmRegistration form {
+    width: 100%;
+    margin: 0px;
+    border-radius: unset;
+    box-sizing: border-box;
+  }
 }

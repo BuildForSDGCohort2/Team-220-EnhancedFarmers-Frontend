@@ -46,63 +46,67 @@ class FarmerRegisterForm extends FormInput {
   render() {
     return (
       <>
-        <div className="container bg-light">
-          <div className="card style">
-            <div className="card-body">
-              <h5 className="card-title btn btn-primary">Step One</h5>
-              <p className="card-text">
-                Provide us with the inintial information about your project e.g farm
-                give us your contact.
-              </p>
+        <div className="container">
+          <div className="first">
+            <div className="card style">
+              <div className="card-body">
+                <h5>Step One</h5>
+                <p className="card-text">
+                  Provide us with the inintial information about your project
+                  e.g farm give us your contact.
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div className="card style">
-            <div className="card-body">
-              <h5 className="card-title btn btn-primary">Step Two</h5>
-              <p className="card-text">
-                Our professionals will contact you For the details about your
-                projects and assessment will be done on your project
-              </p>
-              {/* <Link to="/professionals/login" className="btn btn-primary">Login</Link> */}
+            <div className="card style">
+              <div className="card-body">
+                <h5>Step Two</h5>
+                <p className="card-text">
+                  Our professionals will contact you For the details about your
+                  projects and assessment will be done on your project
+                </p>
+                {/* <Link to="/professionals/login" className="btn btn-primary">Login</Link> */}
+              </div>
             </div>
-          </div>
 
-          <div className="card style">
-            <div className="card-body">
-              <h5 className="card-title btn btn-primary">Step Three</h5>
-              <p className="card-text">
-                A report of the requirement for the project is done and Arragement
-                for the sourcing is done.
-                Discussion is done about the requirements by the professionals,investors
-                and farmer your self.
-              </p>
-              {/* <Link to="/professionals/login" className="btn btn-primary">Login</Link> */}
+            <div className="card style">
+              <div className="card-body">
+                <h5>Step Three</h5>
+                <p className="card-text">
+                  A report of the requirement for the project is done and
+                  Arragement for the sourcing is done. Discussion is done about
+                  the requirements by the professionals,investors and farmer
+                  your self.
+                </p>
+                {/* <Link to="/professionals/login" className="btn btn-primary">Login</Link> */}
+              </div>
             </div>
-          </div>
 
-          <div className="card style">
-            <div className="card-body">
-              <h5 className="card-title btn btn-primary">Step Four</h5>
-              <p className="card-text">
-                1. Get Aprroved And Projects registetered
-              </p>
-              <p className="card-text">
-                2.
-                <span className="badge badge-pill badge-secondary">Congurations</span>
-                <br />
-                Upon becoming Part of excelling Farmers
-              </p>
-              {/* <Link to="/professionals/login" className="btn btn-primary">Login</Link> */}
+            <div className="card style">
+              <div className="card-body">
+                <h5>Step Four</h5>
+                <p className="card-text">
+                  1. Get Aprroved And Projects registetered
+                </p>
+                <p className="card-text">
+                  2.
+                  <span className="badge badge-pill badge-secondary">
+                    Congurations
+                  </span>
+                  <br />
+                  Upon becoming Part of excelling Farmers
+                </p>
+                {/* <Link to="/professionals/login" className="btn btn-primary">Login</Link> */}
+              </div>
             </div>
           </div>
 
           <div className="content">
-            <h2> NOW SIGN UP HERE TO CONTINUE </h2>
             <form onSubmit={this.handleSubmit}>
+              <h2> SIGN UP </h2>
               {this.renderTextInput("email", "Email", "email")}
               {this.renderTextInput("fname", "First Name")}
-              {this.renderTextInput("lname", "Last Name")}
+              {this.renderTextInput("lname", "lname", "Last Name")}
               {this.renderTextInput("contact", "Contact")}
               {this.renderTextInput("location", "Location")}
               {this.renderTextInput("password", "Password", "password")}
@@ -110,9 +114,7 @@ class FarmerRegisterForm extends FormInput {
               {this.renderButton("Sign Up")}
             </form>
           </div>
-
         </div>
-
       </>
     );
   }

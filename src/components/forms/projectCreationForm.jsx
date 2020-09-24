@@ -7,6 +7,7 @@ import { createAproject } from "../../services/projects";
 import { getAllFarmers } from "../../services/farmers";
 import { getAllProfessionals } from "../../services/professionals";
 import { getAllInvestors } from "../../services/investor";
+import "./formStyles/centerContent.css";
 
 class ProjectCreation extends FormInput {
   state = {

@@ -4,6 +4,8 @@
 import React, { Component } from "react";
 import Joi from "joi-browser";
 
+import "../forms/formStyles/centerContent.css";
+
 import TextInput from "./input";
 import Select from "./select";
 // import FileInput from "./fileInput";
@@ -12,7 +14,7 @@ class FormInput extends Component {
   state = {
     data: {},
     errors: {},
-    image: null
+    image: null,
   };
 
   validate = () => {
@@ -107,23 +109,22 @@ class FormInput extends Component {
   // eslint-disable-next-line class-methods-use-this
   renderFileInput() {
     return (
-      <input onChange={this.onImageChange} type="file" name="image" accept="image/*" />
+      <input
+        onChange={this.onImageChange}
+        type="file"
+        name="image"
+        accept="image/*"
+      />
     );
   }
-  
-  renderLargeText(name,label){
+
+  renderLargeText(name, label) {
     return (
       <>
-      <label>{label}</label>
-      <textarea 
-       name={name}
-       onChange={this.handleChange}
-       rows="4"
-       cols="25"
-       />
+        <label>{label}</label>
+        <textarea name={name} onChange={this.handleChange} rows="4" cols="25" />
       </>
-      )
-    
+    );
   }
 }
 

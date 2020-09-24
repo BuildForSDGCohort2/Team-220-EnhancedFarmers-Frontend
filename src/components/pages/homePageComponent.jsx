@@ -39,7 +39,7 @@ const HomePage = () => (
         <div className="carousel-item" style={{ opacity: "0.6" }}>
           <img
             className="d-block w-100"
-            src={require("../../images/cabbages.jpeg")}
+            src={require("../../images/ginger.jpg")}
             alt="Cabbage Project"
             style={{ filter: "brightness(70%)" }}
           />
@@ -66,7 +66,7 @@ const HomePage = () => (
         <div className="carousel-item">
           <img
             className="d-block w-100"
-            src={require("../../images/chicken.jpeg")}
+            src={require("../../images/Spinach.jpg")}
             alt="Poutry Project"
             style={{ filter: "brightness(60%)" }}
           />
@@ -74,11 +74,11 @@ const HomePage = () => (
       </div>
     </div>
 
-    <h1> About Us </h1>
+    <h1 style={{ backgroundcolor: "#badc58" }}> About Us </h1>
 
     <div className="upper bg-secondary">
-      <div className="headers">
-        <h6 style={{ color: "#ecf0f1" }}>WELCOME TO</h6>
+      <div className="headers text-white">
+        <h6>WELCOME TO</h6>
         <h2 style={{ color: "#badc58" }}>
           Enhanced
           <span style={{ color: "#ecf0f1" }}>Farmers</span>
@@ -96,7 +96,6 @@ const HomePage = () => (
     </div>
     <div className="header">
       <h1>Our Investors!</h1>
-
     </div>
     <div className="investors">
       <div className="logo">
@@ -107,7 +106,7 @@ const HomePage = () => (
       </div>
       <div className="logo">
         <img
-          src={require("../../images/SDG.jpg")}
+          src={require("../../images/sdgg.jpg")}
           alt="../../images/andela.png"
         />
       </div>

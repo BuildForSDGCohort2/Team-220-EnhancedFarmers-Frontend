@@ -12,7 +12,7 @@ class DisplayItems extends Component {
     data: [],
     currentPage: 1,
     pageSize: 16,
-    searchQuery: ""
+    searchQuery: "",
   };
 
   handlePageChage = (page) => {
@@ -28,8 +28,9 @@ class DisplayItems extends Component {
     let dataToUse = allData;
 
     if (searchQuery) {
-      dataToUse = allData
-        .filter((m) => m.category.toLowerCase().startsWith(searchQuery.toLowerCase()));
+      dataToUse = allData.filter((m) =>
+        m.category.toLowerCase().startsWith(searchQuery.toLowerCase())
+      );
     }
 
     const pagination = paginate(dataToUse, currentPage, pageSize);
@@ -42,7 +43,11 @@ class DisplayItems extends Component {
     const { totalCount, data } = this.pageData();
     return (
       <>
-        <SearchBox className="search" value={searchQuery} onChange={this.handleSearch} />
+        <SearchBox
+          className="search"
+          value={searchQuery}
+          onChange={this.handleSearch}
+        />
         <div className="preview">
           {data.map((item) => (
             <Card key={item.id} item={item} />

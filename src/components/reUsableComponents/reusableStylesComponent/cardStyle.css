@@ -3,3 +3,11 @@
   height: 15vw;
   object-fit: cover;
 }
+.card-body {
+  margin-top: 10px;
+  height: 100px;
+  border: unset;
+}
+.row {
+  height: 60px;
+}

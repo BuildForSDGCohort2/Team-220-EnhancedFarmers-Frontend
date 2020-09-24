@@ -71,10 +71,6 @@ const Footer = () => (
     <div className="footer-copyright text-center py-3 border-top border-white text-white">
       © 2020 copyright
     </div>
-  <footer className=" py-5 sticky bg-primary">
-    <p className=" text-center text-white">
-      Copyright © Andela build for sustainble goal development 2020
-    </p>
   </footer>
 );
 
