@@ -66,13 +66,8 @@ const NavBar = () => (
         </li>
 
         <li className="nav-item">
-<<<<<<< HEAD
-          <NavLink className="nav-link" to="/farmers">
-            Farmers
-=======
           <NavLink className="nav-link text-white" to="/projects">
             Projects
->>>>>>> 20cc7f50c782f20aff347a7560ea609db6592aba
           </NavLink>
         </li>
 

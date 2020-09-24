@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
 function Card(props) {
   const { item } = props;
@@ -23,10 +22,7 @@ function Card(props) {
             <h4>price</h4>
             {item.price}
           </div>
-          <button className="col btn btn-primary" onClick={() => links()}>
-            {" "}
-            Buy{" "}
-          </button>
+          <button className="col btn btn-primary"> Buy </button>
         </div>
       </div>
     </div>
