@@ -9,7 +9,11 @@ class ProductDetails extends Component {
         <div className="row">
           <div className="col-md-5">
             <div className="card">
-              <img src={require("../../images/pic.jpg")} className="card-img-top img-fluid" alt="professional" />
+              <img
+                src={require("../../images/pic.jpg")}
+                className="card-img-top img-fluid"
+                alt="professional"
+              />
             </div>
           </div>
           <div className="col-md-7 color">

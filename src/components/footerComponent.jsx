@@ -8,7 +8,7 @@ const Footer = () => (
       <div className="row">
         <div
           className="col-md-4
-         mx-auto"
+          mx-auto"
         >
           <h5 className="font-weight-bold text-uppercase mt-3 mb-4 text-white">
             PAGES
@@ -21,8 +21,8 @@ const Footer = () => (
               </Link>
             </li>
             <li>
-              <Link className="page" to="/farmers/register">
-                Sign Up
+              <Link className="page" to="/investors/register">
+                Become An Investor
               </Link>
             </li>
             <li>
@@ -53,6 +53,9 @@ const Footer = () => (
             <li>
               <p className="page">Sensitization</p>
             </li>
+            <li>
+              <p className="page">Access to Machinery</p>
+            </li>
           </ul>
         </div>
 
@@ -64,6 +67,8 @@ const Footer = () => (
           </h5>
           <p className="page">kyakusahmed@outlook.com</p>
           <p className="page">+256706196611</p>
+          <p className="page">mugabamuha@gmail.com</p>
+          <p className="page">+256705938222</p>
         </div>
       </div>
     </div>

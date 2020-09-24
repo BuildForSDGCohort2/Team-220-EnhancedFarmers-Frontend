@@ -60,7 +60,7 @@
   bottom: initial;
 }
 
-.btn btn-primary additions {
+.additions {
   flex: 2;
   margin: auto;
 }
@@ -70,6 +70,7 @@
   margin: auto;
 }
 
+<<<<<<< HEAD
 @media only screen and (max-width: 922px) {
   .investors {
     justify-self: center;
@@ -92,6 +93,8 @@
   }
 }
 
+=======
+>>>>>>> 20cc7f50c782f20aff347a7560ea609db6592aba
 @media only screen and (max-width: 600px) {
   .investors {
     flex-direction: column;
@@ -150,6 +153,7 @@
     font-size: 22px;
   }
 }
-.d-block w-100 {
+
+.d-block {
   filter: brightness(70%);
 }

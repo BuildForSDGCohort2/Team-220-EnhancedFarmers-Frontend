@@ -67,7 +67,7 @@ class ProjectsPage extends CompleteTable {
         <div>
           {(user.isAdmin === 1 || user.isAdmin === 0) && (
             <Link to="/projects/create" className="btn btn-primary">
-              New Project{" "}
+              New Project
             </Link>
           )}
         </div>

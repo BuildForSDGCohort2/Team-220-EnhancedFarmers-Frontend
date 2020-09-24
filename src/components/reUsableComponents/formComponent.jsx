@@ -8,6 +8,7 @@ import "../forms/formStyles/centerContent.css";
 
 import TextInput from "./input";
 import Select from "./select";
+import { Label } from "reactstrap";
 // import FileInput from "./fileInput";
 
 class FormInput extends Component {
@@ -107,21 +108,37 @@ class FormInput extends Component {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  renderFileInput() {
+  renderFileInput(name) {
     return (
+<<<<<<< HEAD
       <input
         onChange={this.onImageChange}
         type="file"
         name="image"
         accept="image/*"
       />
+=======
+      <>
+        <label htmlFor={Label}> {name} </label>
+        <input
+          onChange={this.onImageChange}
+          type="file"
+          name="image"
+          accept="image/*"
+        />
+      </>
+>>>>>>> 20cc7f50c782f20aff347a7560ea609db6592aba
     );
   }
 
   renderLargeText(name, label) {
     return (
       <>
+<<<<<<< HEAD
         <label>{label}</label>
+=======
+        <label htmlFor={label}>{label}</label>
+>>>>>>> 20cc7f50c782f20aff347a7560ea609db6592aba
         <textarea name={name} onChange={this.handleChange} rows="4" cols="25" />
       </>
     );
