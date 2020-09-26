@@ -18,8 +18,9 @@ class ProjectsPage extends CompleteTable {
     { path: "farmer", label: "Farmer" },
     { path: "professional", label: "Professional" },
     { path: "investor", label: "Investor" },
-    { path: "investedAmount", label: "Min Investiment" },
-    { path: "maxAmountToInvest", label: "Max Investment Amount" },
+    { path: "investedAmount", label: "Min Amount" },
+    { path: "maxAmountToInvest", label: "Max Amount" },
+    { path: "funding", label: "Needs Funding" },
     { path: "harvestPeriod", label: "Expected End Date" },
   ];
 

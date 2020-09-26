@@ -25,6 +25,14 @@ export async function loginFarmer(email, password) {
   localStorage.setItem("token", jwt);
 }
 
+export async function loginCustomer(email, password) {
+  const loginUrl = `${url}/customers/login`;
+  const { data } = await http.post(loginUrl, { email, password });
+  const { token: jwt } = data;
+
+  localStorage.setItem("token", jwt);
+}
+
 function loginWithJwt(jwt) {
   localStorage.setItem("token", jwt);
 }
@@ -50,9 +58,8 @@ function getJwt() {
 http.setJwt(getJwt());
 
 export default {
-//   loginUser,
   loginWithJwt,
   logOut,
   getCurrentUser,
-  getJwt
+  getJwt,
 };

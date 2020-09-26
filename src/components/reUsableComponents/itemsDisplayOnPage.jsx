@@ -63,6 +63,7 @@ class DisplayItems extends Component {
   returnedContent = () => {
     const { currentPage, pageSize, searchQuery, user } = this.state;
     const { totalCount, data } = this.pageData();
+    console.log(data);
     return (
       <>
         <SearchBox

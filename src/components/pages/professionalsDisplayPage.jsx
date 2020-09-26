@@ -22,7 +22,9 @@ class ProfessionalsTable extends CompleteTable {
       path: "name",
       label: "Name",
       content: (professional) => (
-        <Link to={`/professional/${professional.id}`}>{professional.name}</Link>
+        <Link to={`/professionals/${professional.id}`}>
+          {professional.name}
+        </Link>
       ),
     },
     { path: "Contact", label: "Contact" },
