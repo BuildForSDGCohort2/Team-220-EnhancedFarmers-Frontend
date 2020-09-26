@@ -152,6 +152,6 @@
   }
 }
 
-.d-block {
+.d-block .w-100 {
   filter: brightness(70%);
 }

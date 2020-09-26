@@ -22,10 +22,10 @@ class ProjectCreation extends FormInput {
       end_time: "",
       description: "",
     },
-    errors: {},
     farmers: [],
     professionals: [],
     investors: [],
+    errors: {},
   };
 
   schema = {

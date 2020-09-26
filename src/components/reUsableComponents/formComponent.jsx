@@ -8,8 +8,6 @@ import "../forms/formStyles/centerContent.css";
 
 import TextInput from "./input";
 import Select from "./select";
-import { Label } from "reactstrap";
-// import FileInput from "./fileInput";
 
 class FormInput extends Component {
   state = {
@@ -111,8 +109,9 @@ class FormInput extends Component {
   renderFileInput(name) {
     return (
       <>
-        <label htmlFor={Label}> {name} </label>
+        <label htmlFor={name}>{name}</label>
         <input
+          className="m-2"
           onChange={this.onImageChange}
           type="file"
           name="image"

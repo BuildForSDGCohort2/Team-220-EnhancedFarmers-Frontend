@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import CompleteTable from "../reUsableComponents/tableReUse";
 import { getAllProjects, deleteProject } from "../../services/projects";
+import auth from "../../services/authServices";
 
 class ProjectsPage extends CompleteTable {
   state = {
@@ -55,17 +56,18 @@ class ProjectsPage extends CompleteTable {
 
   async componentDidMount() {
     const res = await getAllProjects();
+    const user = auth.getCurrentUser();
+    if (user && user.isAdmin) this.columns.push(this.delete);
+
     this.setState({ items: res.data.data, columns: this.columns });
   }
 
   render() {
     const { user } = this.props;
-    if (user && user.isAdmin) this.columns.push(this.delete);
-
     return (
       <div className="container bg-light">
         <div>
-          {(user.isAdmin === 1 || user.isAdmin === 0) && (
+          {(user.isAdmin || !user.isAdmin) && (
             <Link to="/projects/create" className="btn btn-primary">
               New Project
             </Link>
