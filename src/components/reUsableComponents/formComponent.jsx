@@ -4,6 +4,8 @@
 import React, { Component } from "react";
 import Joi from "joi-browser";
 
+import "../forms/formStyles/centerContent.css";
+
 import TextInput from "./input";
 import Select from "./select";
 

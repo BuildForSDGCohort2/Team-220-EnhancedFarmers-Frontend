@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import { Link } from "react-router-dom";
 
 import { url } from "../../config.json";
 
 import "./reusableStylesComponent/cardStyle.css";
+
 
 function Card(props) {
   const { item, user, onDelete } = props;
@@ -15,7 +17,9 @@ function Card(props) {
         src={`${url}/uploads/${item.imageUrl}`}
         className="card-img-top"
         alt=""
+        style={{ height: "10rem" }}
       />
+
       <div className="card-body labels">
         <div className="label">
           <h4>Qnty</h4>

@@ -2,6 +2,7 @@ import React from "react";
 import Joi from "joi-browser";
 
 import FormInput from "../reUsableComponents/formComponent";
+import "./formStyles/centerContent.css";
 
 class FarmRegistrationForm extends FormInput {
   state = {
@@ -27,8 +28,9 @@ class FarmRegistrationForm extends FormInput {
 
   render() {
     return (
-      <div>
+      <div class="farmRegistration">
         <form onSubmit={this.handleSubmit}>
+          <h2>Farm Details</h2>
           {this.renderTextInput("farmer_id", "Farmer")}
           {this.renderTextInput("location", "Location")}
           {this.renderTextInput("size", "Size")}
