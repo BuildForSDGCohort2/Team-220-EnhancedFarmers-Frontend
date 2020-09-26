@@ -13,3 +13,9 @@ export const getAllProjects = () => https.get(proUrl);
 
 // export const getSingleproject = (proId) => https.get(`${proUrl}/${proId}`);
 export const deleteProject = (proId) => https.delete(`${proUrl}/${proId}`);
+
+export const getProjectsByAProfessional = (professionalId) => {
+  const professionalUrl = `${proUrl}/${professionalId}/professional`;
+
+  return https.get(professionalUrl);
+};

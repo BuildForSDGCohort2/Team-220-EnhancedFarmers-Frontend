@@ -1,0 +1,55 @@
+import React from "react";
+import { toast } from "react-toastify";
+import Joi from "joi-browser";
+
+import FormInput from "../reUsableComponents/formComponent";
+import { changePassword } from "../../services/customers";
+
+class ChangePassword extends FormInput {
+  state = {
+    data: {
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
+    errors: {},
+  };
+
+  schema = {
+    email: Joi.string().email().required(),
+    password: Joi.string().required(),
+    confirmPassword: Joi.string().required(),
+  };
+
+  submit = async () => {
+    try {
+      await changePassword(this.state.data);
+      this.props.history.push("/");
+    } catch (ex) {
+      if (ex.response) {
+        const returnErrors = ex.response.data.message;
+        this.setState({ errors: returnErrors });
+        toast.error(this.state.errors);
+      }
+    }
+  };
+
+  render() {
+    return (
+      <div className="content">
+        <form onSubmit={this.handleSubmit}>
+          {this.renderTextInput("email", "Your Email", "email")}
+          {this.renderTextInput("password", "New Password", "password")}
+          {this.renderTextInput(
+            "confirmPassword",
+            "Confirm Password",
+            "password"
+          )}
+          {this.renderButton("Change Pasword")}
+        </form>
+      </div>
+    );
+  }
+}
+
+export default ChangePassword;
