@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import auth from "./services/authServices";
+
 import HomePage from "./components/pages/homePageComponent";
 import FarmerRegisterForm from "./components/forms/farmerRegisterForm";
 import FarmerLoginForm from "./components/forms/farmerLoginForm";
@@ -27,13 +28,10 @@ import FarmersPage from "./components/pages/farmersPageComponent";
 import ProjectCreation from "./components/forms/projectCreationForm";
 import FarmerDetails from "./components/pages/farmerDetailsPage";
 import ApproveFarmer from "./components/pages/approveFarmer";
-import LogOut from "./components/logoutComponet";
-import ChangePassword from "./components/forms/updateCustomerPassword";
-import CustomerTable from "./components/pages/customersPage";
-import CustomerDetails from "./components/pages/customerProfile";
 
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
+import LogOut from "./components/logoutComponet";
 
 function App() {
   const [user, setUser] = useState({});
@@ -46,7 +44,6 @@ function App() {
     getUser();
   }, []);
 
-  console.log(user);
   return (
     <>
       <div className="sides">
@@ -55,7 +52,6 @@ function App() {
 
         <Switch>
           <Route exact path="/" component={HomePage} />
-
           <Route path="/logout" component={LogOut} />
           <Route path="/logins" component={LoginPageLinks} />
           <Route
@@ -97,9 +93,6 @@ function App() {
 
           <Route path="/customer/signup" component={CustomerSignUP} />
           <Route path="/customer/login" component={CustomerLogin} />
-          <Route path="/customer/change/password" component={ChangePassword} />
-          <Route path="/customer/:id" component={CustomerDetails} />
-          <Route exact path="/customers" component={CustomerTable} />
 
           {/* Proffesionals down */}
           <Route path="/professionals/signup" component={ProfessionalRegForm} />

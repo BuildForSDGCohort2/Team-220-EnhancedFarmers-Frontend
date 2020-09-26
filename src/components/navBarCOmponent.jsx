@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import "./componentStyles/navbarStyles.css";
 
 const NavBar = ({ user }) => (
-  <nav className="navbar navbar-expand-lg bg-primary">
+  <nav className="navbar navbar-expand-lg navbar-light bg-primary">
     <NavLink className="navbar-brand text-white" to="/">
       Home
     </NavLink>
@@ -35,14 +35,14 @@ const NavBar = ({ user }) => (
             Category
           </Link>
           <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <Link className="dropdown-item text-white" to="/products">
+            <Link className="dropdown-item" to="/products">
               frults
             </Link>
-            <Link className="dropdown-item text-white" to="products">
+            <Link className="dropdown-item" to="products">
               Vegitables
             </Link>
             <div className="dropdown-item" />
-            <Link className="dropdown-item text-white" to="/">
+            <Link className="dropdown-item text-green" to="/">
               Fish
             </Link>
           </div>
@@ -80,41 +80,6 @@ const NavBar = ({ user }) => (
                 Projects
               </NavLink>
             </li>
-
-            <li className="nav-item">
-              <NavLink className="nav-link text-white" to="/farmers">
-                Farmers
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link text-white" to="/customers">
-                Customers
-              </NavLink>
-            </li>
-          </>
-        )}
-        {user && user.isAdmin === 0 && (
-          <>
-            <li className="nav-item">
-              <NavLink className="nav-link text-white" to="/projects">
-                Projects
-              </NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink className="nav-link text-white" to="/farmers">
-                Farmers
-              </NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink
-                className="nav-link text-white"
-                to={`/professionals/${user.id}`}
-              >
-                Me
-              </NavLink>
-            </li>
           </>
         )}
 
@@ -127,16 +92,6 @@ const NavBar = ({ user }) => (
             </li>
           </>
         )}
-      </ul>
-
-      <ul className="navbar-nav">
-        <>
-          <li className="nav-item">
-            <NavLink className="nav-link text-white" to="/customer/signup">
-              Become A customer
-            </NavLink>
-          </li>
-        </>
       </ul>
     </div>
   </nav>

@@ -1,17 +1,12 @@
-.detail {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 3em;
-  margin-bottom: 3em;
-}
-.detail .image {
-  margin: 1em;
+.container {
+  margin-top: 50px;
 }
 
-.container .image img {
-  height: 300px;
-  width: 300px;
-  justify-content: center;
-  border-radius: 50%;
+.color {
+  background-color: #f8f9fa;
+}
+
+.row {
+  margin: 20px;
+  padding: 0.2rem;
 }

@@ -3,24 +3,11 @@
   height: 15vw;
   object-fit: cover;
 }
-
 .card-body {
   margin-top: 10px;
   height: 100px;
   border: unset;
 }
-
 .row {
   height: 60px;
-}
-
-.card .labels {
-  display: flex;
-}
-.card .labels .label {
-  margin-right: 30px;
-}
-.card .buttons {
-  display: flex;
-  justify-content: space-evenly;
 }

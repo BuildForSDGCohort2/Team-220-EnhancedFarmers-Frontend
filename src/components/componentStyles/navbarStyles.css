@@ -6,9 +6,3 @@
 .nav-link {
   color: white;
 }
-
-.navbar-nav .nav-item :hover {
-  margin: 1px;
-  background-color: darkblue;
-  border-radius: 20%;
-}

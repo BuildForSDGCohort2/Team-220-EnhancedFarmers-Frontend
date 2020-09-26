@@ -39,7 +39,7 @@ class FarmerLoginForm extends FormInput {
   render() {
     return (
       <div className="content">
-        <h3>Please Login as a farmer here</h3>
+        <h3>Please Login here</h3>
         <form onSubmit={this.handleSubmit}>
           {this.renderTextInput("email", "Email", "email")}
           {this.renderTextInput("password", "Password", "password")}

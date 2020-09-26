@@ -15,7 +15,7 @@ export const createAproduct = (product, image) => {
   return https.post(productsUrl, data);
 };
 
-export const getAllProducts = () => https.get(productsUrl);
+export const getAllInvestors = () => https.get(productsUrl);
 
 export const deleteProduct = (itemId) =>
   https.delete(`${productsUrl}/${itemId}`);

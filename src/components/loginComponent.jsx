@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./componentStyles/login.css";
 
 const LoginPageLinks = () => (
-  <div className="container bg-primary style">
+  <div className="container">
     <div className="row">
       <div className="col-md-6">
         <div className="card">
@@ -57,12 +57,12 @@ const LoginPageLinks = () => (
       <div className="col-md-6">
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title btn btn-success">Customers</h5>
+            <h5 className="card-title btn btn-success">Card title</h5>
             <p className="card-text">
-              Your a customer? or your looking for great agriculture products?
-              Please login to continue
+              Some quick example text to build on the card title and make up the
+              bulk of the cards content.
             </p>
-            <Link to="/customer/login" className="btn btn-success">
+            <Link to="/" className="btn btn-success">
               Login
             </Link>
           </div>
