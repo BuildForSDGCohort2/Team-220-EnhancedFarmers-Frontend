@@ -36,7 +36,7 @@ class ProductForm extends FormInput {
   submit = async () => {
     try {
       await createAproduct(this.state.data, this.state.image);
-      window.location = "/";
+      window.location = "/products";
     } catch (ex) {
       if (ex.response) {
         console.log(ex.response);

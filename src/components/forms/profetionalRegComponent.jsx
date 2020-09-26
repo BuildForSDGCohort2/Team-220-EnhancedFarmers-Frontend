@@ -4,7 +4,6 @@ import { toast } from "react-toastify";
 
 import FormInput from "../reUsableComponents/formComponent";
 import { createAProfessional } from "../../services/professionals";
-import auth from "../../services/authServices";
 
 import "./formStyles/centerContent.css";
 
@@ -34,11 +33,7 @@ class ProfessionalRegForm extends FormInput {
 
   submit = async () => {
     try {
-      const response = await createAProfessional(
-        this.state.data,
-        this.state.image
-      );
-      auth.loginWithJwt(response.headers["x-access-token"]);
+      await createAProfessional(this.state.data, this.state.image);
       window.location = "/projects";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import DisplayItems from "../reUsableComponents/itemsDisplayOnPage";
 import auth from "../../services/authServices";
-import query from "../../services/demoData";
+import { getAllProducts } from "../../services/products";
 
 class ProductPage extends DisplayItems {
   state = {
@@ -15,10 +15,10 @@ class ProductPage extends DisplayItems {
 
   async componentDidMount() {
     let products = [...this.state.data];
-    products = await query.getAllProducts();
+    products = await getAllProducts();
     const currentUser = await auth.getCurrentUser();
 
-    this.setState({ data: products, user: currentUser });
+    this.setState({ data: products.data.data, user: currentUser });
   }
 
   render() {
@@ -26,7 +26,7 @@ class ProductPage extends DisplayItems {
     return (
       <>
         <div>
-          {user.isAdmin ? (
+          {user && (user.isAdmin || user.isAdmin === 0) ? (
             <Link
               to="/products/register"
               className="btn btn-primary"
@@ -37,8 +37,8 @@ class ProductPage extends DisplayItems {
           ) : (
             ""
           )}
+          {this.returnedContent()}
         </div>
-        {this.returnedContent()}
       </>
     );
   }
