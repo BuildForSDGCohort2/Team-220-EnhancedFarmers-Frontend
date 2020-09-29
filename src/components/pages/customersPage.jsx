@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import CompleteTable from "../reUsableComponents/tableReUse";
+import { paginate } from "../../services/paginate";
 import { getAllCustomers, deleteCustomer } from "../../services/customers";
 
 class CustomerTable extends CompleteTable {
@@ -54,6 +55,22 @@ class CustomerTable extends CompleteTable {
 
       this.setState({ items: allItems });
     }
+  };
+
+  getPagedData = () => {
+    const { pageSize, currentPage, searchQuery, items: allItems } = this.state;
+
+    let filtered = allItems;
+    if (searchQuery) {
+      filtered = allItems.filter(
+        (m) =>
+          m.username.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          m.email.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+    const pagination = paginate(filtered, currentPage, pageSize);
+
+    return { totalCount: filtered.length, data: pagination };
   };
 
   componentDidMount = async () => {

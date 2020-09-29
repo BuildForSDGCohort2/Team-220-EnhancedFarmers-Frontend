@@ -4,6 +4,7 @@ import Joi from "joi-browser";
 
 import FormInput from "../reUsableComponents/formComponent";
 import { changePassword } from "../../services/customers";
+import auth from "../../services/authServices";
 
 class ChangePassword extends FormInput {
   state = {
@@ -23,8 +24,9 @@ class ChangePassword extends FormInput {
 
   submit = async () => {
     try {
-      await changePassword(this.state.data);
-      this.props.history.push("/");
+      const response = await changePassword(this.state.data);
+      auth.loginWithJwt(response.headers["x-access-token"]);
+      window.location = "/";
     } catch (ex) {
       if (ex.response) {
         const returnErrors = ex.response.data.message;

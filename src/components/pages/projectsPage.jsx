@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import CompleteTable from "../reUsableComponents/tableReUse";
 import { getAllProjects, deleteProject } from "../../services/projects";
+import { paginate } from "../../services/paginate";
+
 import auth from "../../services/authServices";
 
 class ProjectsPage extends CompleteTable {
@@ -53,6 +55,23 @@ class ProjectsPage extends CompleteTable {
 
       this.setState({ items: allItems });
     }
+  };
+
+  getPagedData = () => {
+    const { pageSize, currentPage, searchQuery, items: allItems } = this.state;
+
+    let filtered = allItems;
+    if (searchQuery) {
+      filtered = allItems.filter(
+        (m) =>
+          m.farmer.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          m.investor.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          m.professional.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+    const pagination = paginate(filtered, currentPage, pageSize);
+
+    return { totalCount: filtered.length, data: pagination };
   };
 
   async componentDidMount() {

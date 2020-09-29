@@ -31,8 +31,10 @@ class DisplayItems extends Component {
     let dataToUse = allData;
 
     if (searchQuery) {
-      dataToUse = allData.filter((m) =>
-        m.category.toLowerCase().startsWith(searchQuery.toLowerCase())
+      dataToUse = allData.filter(
+        (m) =>
+          m.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          m.category.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
 
@@ -63,7 +65,19 @@ class DisplayItems extends Component {
   returnedContent = () => {
     const { currentPage, pageSize, searchQuery, user } = this.state;
     const { totalCount, data } = this.pageData();
-    console.log(data);
+
+    if (!data.length) {
+      return (
+        <>
+          <SearchBox
+            className="search"
+            value={searchQuery}
+            onChange={this.handleSearch}
+          />
+          <h2>NO Products yet</h2>;
+        </>
+      );
+    }
     return (
       <>
         <SearchBox

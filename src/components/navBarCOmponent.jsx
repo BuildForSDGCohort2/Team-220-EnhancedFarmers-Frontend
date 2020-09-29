@@ -48,14 +48,30 @@ const NavBar = ({ user }) => (
           </div>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link text-white" to="/products">
+          <NavLink
+            className="nav-link text-white"
+            to="/products"
+            activeStyle={{
+              fontWeight: "bold",
+              backgroundColor: "darkgreen",
+              borderRadius: 5,
+            }}
+          >
             Products
           </NavLink>
         </li>
         {!user && (
           <>
             <li className="nav-item">
-              <NavLink className="nav-link text-white" to="/logins">
+              <NavLink
+                className="nav-link text-white"
+                to="/logins"
+                activeStyle={{
+                  fontWeight: "bold",
+                  backgroundColor: "green",
+                  borderRadius: 5,
+                }}
+              >
                 Login
               </NavLink>
             </li>
@@ -64,30 +80,70 @@ const NavBar = ({ user }) => (
         {user && user.isAdmin && (
           <>
             <li className="nav-item">
-              <NavLink className="nav-link text-white" to="/professionals">
+              <NavLink
+                className="nav-link text-white"
+                to="/professionals"
+                activeStyle={{
+                  fontWeight: "bold",
+                  backgroundColor: "darkgreen",
+                  borderRadius: 5,
+                }}
+              >
                 Professionals
               </NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link text-white" to="/investors">
+              <NavLink
+                className="nav-link text-white"
+                to="/investors"
+                activeStyle={{
+                  fontWeight: "bold",
+                  backgroundColor: "darkgreen",
+                  borderRadius: 5,
+                }}
+              >
                 Investors
               </NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link text-white" to="/projects">
+              <NavLink
+                className="nav-link text-white"
+                to="/projects"
+                activeStyle={{
+                  fontWeight: "bold",
+                  backgroundColor: "darkgreen",
+                  borderRadius: 5,
+                }}
+              >
                 Projects
               </NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link text-white" to="/farmers">
+              <NavLink
+                className="nav-link text-white"
+                to="/farmers"
+                activeStyle={{
+                  fontWeight: "bold",
+                  backgroundColor: "darkgreen",
+                  borderRadius: 5,
+                }}
+              >
                 Farmers
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link text-white" to="/customers">
+              <NavLink
+                className="nav-link text-white"
+                to="/customers"
+                activeStyle={{
+                  fontWeight: "bold",
+                  backgroundColor: "darkgreen",
+                  borderRadius: 5,
+                }}
+              >
                 Customers
               </NavLink>
             </li>
@@ -96,13 +152,29 @@ const NavBar = ({ user }) => (
         {user && user.isAdmin === 0 && (
           <>
             <li className="nav-item">
-              <NavLink className="nav-link text-white" to="/projects">
+              <NavLink
+                className="nav-link text-white"
+                to="/projects"
+                activeStyle={{
+                  fontWeight: "bold",
+                  backgroundColor: "darkgreen",
+                  borderRadius: 5,
+                }}
+              >
                 Projects
               </NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link text-white" to="/farmers">
+              <NavLink
+                className="nav-link text-white"
+                to="/farmers"
+                activeStyle={{
+                  fontWeight: "bold",
+                  backgroundColor: "darkgreen",
+                  borderRadius: 5,
+                }}
+              >
                 Farmers
               </NavLink>
             </li>
@@ -111,11 +183,31 @@ const NavBar = ({ user }) => (
               <NavLink
                 className="nav-link text-white"
                 to={`/professionals/${user.id}`}
+                activeStyle={{
+                  fontWeight: "bold",
+                  backgroundColor: "darkgreen",
+                  borderRadius: 5,
+                }}
               >
                 Me
               </NavLink>
             </li>
           </>
+        )}
+        {user && user.username && (
+          <li className="nav-item">
+            <NavLink
+              className="nav-link text-white"
+              to={`/customer/${user.id}`}
+              activeStyle={{
+                fontWeight: "bold",
+                backgroundColor: "darkgreen",
+                borderRadius: 5,
+              }}
+            >
+              {user.username}
+            </NavLink>
+          </li>
         )}
 
         {user && (
@@ -132,7 +224,15 @@ const NavBar = ({ user }) => (
       <ul className="navbar-nav ml-auto">
         <>
           <li className="nav-item">
-            <NavLink className="nav-link text-white" to="/customer/signup">
+            <NavLink
+              className="nav-link text-white"
+              to="/customer/signup"
+              activeStyle={{
+                fontWeight: "bold",
+                backgroundColor: "darkgreen",
+                borderRadius: 5,
+              }}
+            >
               Become A customer
             </NavLink>
           </li>
