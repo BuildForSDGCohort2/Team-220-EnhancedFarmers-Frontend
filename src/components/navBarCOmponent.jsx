@@ -129,7 +129,7 @@ const NavBar = ({ user }) => (
         )}
       </ul>
 
-      <ul className="navbar-nav">
+      <ul className="navbar-nav ml-auto">
         <>
           <li className="nav-item">
             <NavLink className="nav-link text-white" to="/customer/signup">

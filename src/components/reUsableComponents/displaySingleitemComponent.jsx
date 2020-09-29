@@ -7,20 +7,19 @@ import { url } from "../../config.json";
 
 import "./reusableStylesComponent/cardStyle.css";
 
-
 function Card(props) {
   const { item, user, onDelete } = props;
 
   return (
     <div className="card" style={{ width: "18rem" }}>
       <img
-        src={`${url}/uploads/${item.imageUrl}`}
+        src={`${url}/uploads/${item.imageurl}`}
         className="card-img-top"
         alt=""
         style={{ height: "10rem" }}
       />
 
-      <div className="card-body labels">
+      <div className="card-body p-0 labels">
         <div className="label">
           <h4>Qnty</h4>
           {item.quantity}
