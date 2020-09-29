@@ -12,7 +12,6 @@ import CustomerLogin from "./components/forms/customerLoginComponet";
 import ProfessionalRegForm from "./components/forms/profetionalRegComponent";
 import ProfessionalLoginForm from "./components/forms/profectionLoginForm";
 import ProductPage from "./components/pages/productsPageComponent";
-import FarmRegistrationForm from "./components/forms/farmRegistrationForm";
 import NavBar from "./components/navBarCOmponent";
 import ProductDetails from "./components/pages/productDetailsPage";
 import ProfessionalDetails from "./components/pages/professionalDetails";
@@ -58,10 +57,6 @@ function App() {
 
           <Route path="/logout" component={LogOut} />
           <Route path="/logins" component={LoginPageLinks} />
-          <Route
-            path="/farmers/register/farm"
-            component={FarmRegistrationForm}
-          />
 
           {/* Projects  */}
           <Route path="/projects/create" component={ProjectCreation} />

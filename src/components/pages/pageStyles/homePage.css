@@ -51,6 +51,7 @@
   border-top: 1px solid #535c68;
   border-bottom: 1px solid #535c68;
 }
+
 .carousel-caption {
   width: 550px;
   left: 15%;
@@ -69,25 +70,31 @@
   .investors {
     justify-self: center;
   }
+
   .investors .logo img {
     height: 4em;
     margin: 10px;
   }
+
   .container-fluid {
     text-align: center;
   }
+
   .header h1 {
     flex: 2;
     font-size: 25px;
     margin: auto;
   }
+
   .container-fluid h1 {
     font-size: 25px;
     margin: auto;
   }
+
   .upper {
     flex-flow: column;
   }
+
   .additions {
     margin: 20px;
   }
@@ -97,31 +104,39 @@
   .investors {
     flex-direction: column;
   }
+
   .investors .logo {
     text-align: center;
     border-bottom: 1px solid #535c68;
   }
+
   .investors .logo img {
     height: 4em;
   }
+
   .header h1 {
     flex: 2;
     font-size: 25px;
     margin: auto;
   }
+
   .header {
     text-align: center;
   }
+
   .container-fluid h1 {
     font-size: 25px;
   }
+
   .upper {
     flex-flow: column;
   }
+
   .carousel-item {
     background-color: crimson;
     height: 10em;
   }
+
   .additions {
     margin: 20px;
   }
@@ -131,22 +146,27 @@
   .investors {
     flex-direction: column;
   }
+
   .investors .logo {
     text-align: center;
     border-bottom: 1px solid #535c68;
   }
+
   .header {
     text-align: center;
   }
+
   .carousel-item {
     background-color: crimson;
     height: 6em;
   }
+
   .header h1 {
     flex: 2;
     font-size: 20px;
     margin: auto;
   }
+
   .headers h2 {
     font-size: 22px;
   }

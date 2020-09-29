@@ -23,9 +23,8 @@ const ProfessionalDetails = (props) => {
       setProjects(data.data);
     };
     getProjects();
-
     getPro();
-  }, []);
+  }, [props]);
 
   const columns = [
     { path: "Farmer", label: "Farmer" },
@@ -44,14 +43,14 @@ const ProfessionalDetails = (props) => {
     profession,
     contact,
     residence,
-    imageUrl,
+    imageurl,
   } = professional;
 
   console.log(projects);
   return (
     <div className="container detail bg-light">
       <div className="image">
-        <img src={`${url}/uploads/${imageUrl}`} alt="professional" />
+        <img src={`${url}/uploads/${imageurl}`} alt="professional" />
       </div>
       <h2>Everything about the Professional</h2>
       <div className="col-5">

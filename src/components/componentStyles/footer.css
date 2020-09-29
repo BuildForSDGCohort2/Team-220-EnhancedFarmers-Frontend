@@ -12,6 +12,14 @@
   margin-top: 100px;
 }
 
+.page {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700px;
+  margin: 2px;
+}
+/* 
 .list-unstyled Link {
   font-size: 20px;
   color: white;
@@ -19,12 +27,14 @@
   font-weight: 700px;
   margin: 0px;
 }
+
 .page {
   font-size: 20px;
   color: white;
   font-weight: 700px;
   margin: 0px;
 }
+
 .list-unstyled li .page {
   text-decoration: none;
-}
+} */

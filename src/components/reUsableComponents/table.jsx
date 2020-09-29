@@ -5,10 +5,12 @@ import TableBody from "./tableBody";
 const Table = (props) => {
   const { columns, data } = props;
   return (
-    <table className="table">
-      <TableHeader columns={columns} />
-      <TableBody data={data} columns={columns} />
-    </table>
+    <div className="table-responsive">
+      <table className="table table-hover table-bordered table-dark">
+        <TableHeader columns={columns} />
+        <TableBody data={data} columns={columns} />
+      </table>
+    </div>
   );
 };
 

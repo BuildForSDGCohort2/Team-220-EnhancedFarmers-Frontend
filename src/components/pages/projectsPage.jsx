@@ -68,7 +68,7 @@ class ProjectsPage extends CompleteTable {
     return (
       <div className="container bg-light">
         <div>
-          {(user.isAdmin || !user.isAdmin) && (
+          {(user.isAdmin || user.isAdmin === 0) && (
             <Link to="/projects/create" className="btn btn-primary">
               New Project
             </Link>
