@@ -6,7 +6,7 @@ const LogOut = () => {
     auth.logOut();
     window.location = "/";
   });
-  return null;
+  return <></>;
 };
 
 export default LogOut;
