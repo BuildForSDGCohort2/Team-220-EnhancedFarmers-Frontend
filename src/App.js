@@ -29,7 +29,8 @@ import ApproveFarmer from "./components/pages/approveFarmer";
 import LogOut from "./components/logoutComponet";
 import ChangePassword from "./components/forms/updateCustomerPassword";
 import CustomerTable from "./components/pages/customersPage";
-import CustomerDetails from "./components/pages/customerProfile";
+import CustomerDetails from "./components/pages/customerProfilePage";
+import ImageUpdate from "./components/forms/updateCustomerImage";
 
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -92,6 +93,7 @@ function App() {
 
           <Route path="/customer/signup" component={CustomerSignUP} />
           <Route path="/customer/login" component={CustomerLogin} />
+          <Route path="/customer/image" component={ImageUpdate} />
           <Route path="/customer/change/password" component={ChangePassword} />
           <Route path="/customer/:id" component={CustomerDetails} />
           <Route exact path="/customers" component={CustomerTable} />

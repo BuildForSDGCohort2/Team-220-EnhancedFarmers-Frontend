@@ -90,6 +90,10 @@ class FormInput extends Component {
     );
   }
 
+  renderButton1(action) {
+    return <button className="btn btn-primary">{action}</button>;
+  }
+
   renderSelect(name, label, options) {
     const { data, errors } = this.state;
 

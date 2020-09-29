@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { toast } from "react-toastify";
 import CompleteTable from "../reUsableComponents/tableReUse";
+import { paginate } from "../../services/paginate";
 import {
   getAllProfessionals,
   deleteProfessional,
@@ -27,6 +28,7 @@ class ProfessionalsTable extends CompleteTable {
         </Link>
       ),
     },
+    { path: "email", label: "Email" },
     { path: "Contact", label: "Contact" },
     { path: "Residence", label: "Residence" },
     { path: "Profession", label: "Profession" },
@@ -61,6 +63,22 @@ class ProfessionalsTable extends CompleteTable {
 
       this.setState({ items: allItems });
     }
+  };
+
+  getPagedData = () => {
+    const { pageSize, currentPage, searchQuery, items: allItems } = this.state;
+
+    let filtered = allItems;
+    if (searchQuery) {
+      filtered = allItems.filter(
+        (m) =>
+          m.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          m.email.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+    const pagination = paginate(filtered, currentPage, pageSize);
+
+    return { totalCount: filtered.length, data: pagination };
   };
 
   componentDidMount = async () => {

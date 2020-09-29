@@ -22,5 +22,19 @@ export const changePassword = (data) => {
 
 export const getAllCustomers = () => https.get(customerUrl);
 
+export const getSingleCustomer = (customerId) => {
+  return https.get(`${customerUrl}/${customerId}`);
+};
+
+export const updateImage = (image) => {
+  const data = new FormData();
+
+  data.append("image", image);
+
+  const imageUrl = `${customerUrl}/image`;
+
+  return https.patch(imageUrl, data);
+};
+
 export const deleteCustomer = (customerId) =>
   https.delete(`${customerUrl}/${customerId}`);
