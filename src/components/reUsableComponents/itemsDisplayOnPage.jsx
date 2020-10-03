@@ -44,7 +44,8 @@ class DisplayItems extends Component {
   };
 
   handleDelete = async (item) => {
-    const allItems = this.state.data;
+    const { data: allItems } = this.state;
+
     const remaining = allItems.filter((m) => m !== item);
     this.setState({ data: remaining });
     try {

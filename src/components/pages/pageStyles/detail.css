@@ -16,3 +16,14 @@
   justify-content: center;
   border-radius: 50%;
 }
+
+.container .product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container .product img {
+  width: 300px;
+  height: 200px;
+}

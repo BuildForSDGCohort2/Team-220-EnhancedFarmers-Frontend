@@ -147,6 +147,34 @@ const NavBar = ({ user }) => (
                 Customers
               </NavLink>
             </li>
+
+            <li className="nav-item">
+              <NavLink
+                className="nav-link text-white"
+                to="/orders"
+                activeStyle={{
+                  fontWeight: "bold",
+                  backgroundColor: "darkgreen",
+                  borderRadius: 5,
+                }}
+              >
+                all orders
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink
+                className="nav-link text-white"
+                to="/order/pending"
+                activeStyle={{
+                  fontWeight: "bold",
+                  backgroundColor: "darkgreen",
+                  borderRadius: 5,
+                }}
+              >
+                new orders
+              </NavLink>
+            </li>
           </>
         )}
         {user && user.isAdmin === 0 && (

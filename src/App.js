@@ -1,5 +1,7 @@
+/* eslint-disable react/jsx-curly-newline */
+/* eslint-disable no-confusing-arrow */
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import auth from "./services/authServices";
@@ -31,6 +33,8 @@ import ChangePassword from "./components/forms/updateCustomerPassword";
 import CustomerTable from "./components/pages/customersPage";
 import CustomerDetails from "./components/pages/customerProfilePage";
 import ImageUpdate from "./components/forms/updateCustomerImage";
+import PendingOrdersTable from "./components/pages/pendingOrdersPage";
+import AllOrders from "./components/pages/allOrdersPage";
 
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -46,7 +50,6 @@ function App() {
     getUser();
   }, []);
 
-  console.log(user);
   return (
     <>
       <div className="sides">
@@ -83,7 +86,17 @@ function App() {
           {/* products */}
 
           <Route exact path="/products/register" component={ProductForm} />
-          <Route exact path="/product/:id" component={ProductDetails} />
+          <Route
+            exact
+            path="/products/:id"
+            render={() =>
+              !user || !user.username ? (
+                <Redirect to="/customer/login" />
+              ) : (
+                <ProductDetails />
+              )
+            }
+          />
           <Route
             path="/products"
             render={(props) => <ProductPage {...props} user={user} />}
@@ -110,6 +123,11 @@ function App() {
             component={ProfessionalDetails}
           />
           <Route exact path="/professionals" component={ProfessionalsTable} />
+
+          {/* orders */}
+          <Route path="/order/pending" component={PendingOrdersTable} />
+
+          <Route path="/orders" component={AllOrders} />
         </Switch>
         <Footer />
       </div>

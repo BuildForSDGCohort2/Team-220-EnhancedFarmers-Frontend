@@ -46,9 +46,11 @@ function Card(props) {
             </button>
           </>
         ) : (
-          <Link className="btn btn-primary" to={`/products/${item.id}`}>
-            Buy
-          </Link>
+          <div className="row p-0">
+            <Link className="btn btn-primary" to={`/products/${item.id}`}>
+              Buy
+            </Link>
+          </div>
         )}
       </div>
     </div>

@@ -12,9 +12,9 @@ import "./formStyles/centerContent.css";
 class ProjectCreation extends FormInput {
   state = {
     data: {
-      farmer_id: "",
-      profesional_id: "",
-      investor_id: "",
+      farmer_id: 1,
+      profesional_id: 1,
+      investor_id: 1,
       name: "",
       product_category: "",
       amount: "",

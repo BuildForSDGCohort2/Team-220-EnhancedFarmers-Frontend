@@ -38,7 +38,7 @@ class CustomerLogin extends FormInput {
   render() {
     return (
       <div className="content">
-        <h2>Login here</h2>
+        <h2>Customer Login here</h2>
         <form onSubmit={this.handleSubmit}>
           {this.renderTextInput("email", "Email", "email")}
           {this.renderTextInput("password", "Password", "password")}

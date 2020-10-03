@@ -22,6 +22,7 @@ const CustomerDetails = (props) => {
 
     const getOrders = async () => {
       const { data } = await getAllOrdersByCustomer(customerId);
+
       setOrders(data.data);
     };
 
@@ -37,9 +38,21 @@ const CustomerDetails = (props) => {
   const columns = [
     { path: "name", label: "Name" },
     { path: "email", label: "Email" },
-    { path: "contact", label: "contact" },
+    { path: "contact", label: "Customer contact" },
     { path: "product", label: "Product" },
-    { path: "offered_price", label: "Bought Amount" },
+    { path: "price", label: "sell per each" },
+    { path: "quantity", label: "Quantity" },
+    {
+      path: "offered_price",
+      label: "Bought At",
+      content: (order) => (
+        <Link to={`/order/change_bid_price/${order.id}`}>
+          {order.offered_price}
+        </Link>
+      ),
+    },
+    { path: "total", label: "Amount to pay" },
+    { path: "status", label: "Status" },
   ];
 
   const { email, username, imageurl, contact } = customer;

@@ -1,18 +1,24 @@
 import https from "./httpServices";
 import { url } from "../config.json";
 
-const orderUrl = `${url}/farmers`;
+const orderUrl = `${url}/orders`;
 
-export const createFarmer = (farmer) => {
-  const createUrl = `${orderUrl}/signup`;
+export const createOrder = (order) => {
+  const createUrl = `${orderUrl}/`;
 
-  return https.post(createUrl, farmer);
+  return https.post(createUrl, order);
 };
 
-export const approveFarmer = (farmerId, isAdmin) => {
-  const updateUrl = `${orderUrl}/${farmerId}/approve`;
+export const adminChangeStaus = (orderId, status) => {
+  const updateUrl = `${orderUrl}/${orderId}/status`;
 
-  return https.patch(updateUrl, isAdmin);
+  return https.patch(updateUrl, status);
+};
+
+export const adminChangeBidPrice = (orderId, status) => {
+  const updateUrl = `${orderUrl}/${orderId}/price`;
+
+  return https.patch(updateUrl, status);
 };
 
 export const getAllOrdersByCustomer = (customerId) => {
@@ -20,7 +26,9 @@ export const getAllOrdersByCustomer = (customerId) => {
 
   return https.get(customerUrl);
 };
-export const getAllFarmers = () => https.get(orderUrl);
 
-export const deleteFarmer = (farmerId) =>
-  https.delete(`${orderUrl}/${farmerId}`);
+export const getAllPendingOrders = () => https.get(`${orderUrl}/pending`);
+
+export const fetchAllOrders = () => https.get(orderUrl);
+
+export const deleteOrder = (orderId) => https.delete(`${orderUrl}/${orderId}`);

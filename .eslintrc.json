@@ -37,10 +37,12 @@
     "guard-for-in": 0,
     "declaration-colon-newline-afte": 0,
     "value-list-comma-newline-after": 0,
+    "implicit-arrow-linebreak": 0,
     "import/prefer-default-export": 0,
     "react/require-default-props": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/state-in-constructor": 0,
-    "react/prefer-stateless-function": 0
+    "react/prefer-stateless-function": 0,
+    "react/jsx-one-expression-per-line": 0
   }
 }
