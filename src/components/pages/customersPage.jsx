@@ -80,7 +80,12 @@ class CustomerTable extends CompleteTable {
   };
 
   render() {
-    return <div className="container bg-light">{this.renderTable()}</div>;
+    return (
+      <div className="container bg-light">
+        <h1>All Our Customers</h1>
+        {this.renderTable()}
+      </div>
+    );
   }
 }
 

@@ -54,13 +54,9 @@ class ProfessionalsTable extends CompleteTable {
       const response = await deleteProfessional(professional.id);
       toast.success(response.data.message);
     } catch (ex) {
-      if (ex.response && ex.response.status === 404) {
-        toast.error("professional is not found or it was deleted");
+      if (ex.response) {
+        toast.info(ex.response.data.message);
       }
-      if (ex.response && ex.response.status === 401) {
-        toast.error("Sorry! You have no right to delete a professional");
-      }
-
       this.setState({ items: allItems });
     }
   };
@@ -93,6 +89,7 @@ class ProfessionalsTable extends CompleteTable {
         <Link className="btn btn-primary" to="/professionals/signup">
           create professional
         </Link>
+        <h2>All Professionals here </h2>
         {this.renderTable()}
       </div>
     );

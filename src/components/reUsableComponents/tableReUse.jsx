@@ -7,7 +7,6 @@ import Table from "./table";
 
 class CompleteTable extends Component {
   state = {
-    items: [],
     currentPage: 1,
     pageSize: 10,
     searchQuery: "",
@@ -29,7 +28,7 @@ class CompleteTable extends Component {
       return (
         <>
           <SearchBox value={searchQuery} onChange={this.handleSearch} />
-          <h1>No Match</h1>
+          <h1>No Items Yet</h1>
         </>
       );
     }

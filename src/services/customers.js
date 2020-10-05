@@ -22,9 +22,8 @@ export const changePassword = (data) => {
 
 export const getAllCustomers = () => https.get(customerUrl);
 
-export const getSingleCustomer = (customerId) => {
-  return https.get(`${customerUrl}/${customerId}`);
-};
+export const getSingleCustomer = (customerId) =>
+  https.get(`${customerUrl}/${customerId}`);
 
 export const updateImage = (image) => {
   const data = new FormData();

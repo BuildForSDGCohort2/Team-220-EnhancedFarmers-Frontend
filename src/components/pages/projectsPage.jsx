@@ -86,8 +86,9 @@ class ProjectsPage extends CompleteTable {
     const { user } = this.props;
     return (
       <div className="container bg-light">
+        <h2>All Projects here</h2>
         <div>
-          {(user.isAdmin || user.isAdmin === 0) && (
+          {(user.isAdmin || user.isAdmin === false) && (
             <Link to="/projects/create" className="btn btn-primary">
               New Project
             </Link>

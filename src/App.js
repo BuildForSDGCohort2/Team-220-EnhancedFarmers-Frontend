@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-curly-newline */
+/* eslint-disable no-confusing-arrow */
 import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -31,9 +33,14 @@ import ChangePassword from "./components/forms/updateCustomerPassword";
 import CustomerTable from "./components/pages/customersPage";
 import CustomerDetails from "./components/pages/customerProfilePage";
 import ImageUpdate from "./components/forms/updateCustomerImage";
+import PendingOrdersTable from "./components/pages/pendingOrdersPage";
+import AllOrders from "./components/pages/allOrdersPage";
+import UpdateOfferedPrice from "./components/pages/priceUpdatePage";
 
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
+import UpdateStatus from "./components/pages/updateStatusPage";
+import ProductCategories from "./components/pages/productCategories";
 
 function App() {
   const [user, setUser] = useState({});
@@ -45,8 +52,7 @@ function App() {
     };
     getUser();
   }, []);
-
-  console.log(user);
+  // console.log(user);
   return (
     <>
       <div className="sides">
@@ -74,7 +80,10 @@ function App() {
           <Route path="/farmers/register" component={FarmerRegisterForm} />
 
           <Route exact path="/farmers/:id" component={FarmerDetails} />
-          <Route path="/farmers" component={FarmersPage} />
+          <Route
+            path="/farmers"
+            render={(props) => <FarmersPage {...props} user={user} />}
+          />
 
           <Route path="/investors/register" component={InvestorRegForm} />
           <Route path="/investors/login" component={InvestorLoginForm} />
@@ -83,7 +92,16 @@ function App() {
           {/* products */}
 
           <Route exact path="/products/register" component={ProductForm} />
-          <Route exact path="/product/:id" component={ProductDetails} />
+          <Route
+            exact
+            path="/products/:id"
+            render={(props) => <ProductDetails {...props} user={user} />}
+          />
+          <Route
+            path="/categories"
+            render={(props) => <ProductCategories {...props} user={user} />}
+          />
+
           <Route
             path="/products"
             render={(props) => <ProductPage {...props} user={user} />}
@@ -110,6 +128,16 @@ function App() {
             component={ProfessionalDetails}
           />
           <Route exact path="/professionals" component={ProfessionalsTable} />
+
+          {/* orders */}
+          <Route
+            path="/order/change_bid_price/:id"
+            component={UpdateOfferedPrice}
+          />
+          <Route path="/order/change/status/:id" component={UpdateStatus} />
+          <Route path="/order/pending" component={PendingOrdersTable} />
+
+          <Route path="/orders" component={AllOrders} />
         </Switch>
         <Footer />
       </div>

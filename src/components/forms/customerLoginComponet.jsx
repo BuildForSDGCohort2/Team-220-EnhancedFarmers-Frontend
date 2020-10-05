@@ -38,7 +38,7 @@ class CustomerLogin extends FormInput {
   render() {
     return (
       <div className="content">
-        <h2>Login here</h2>
+        <h2>Customer Login here</h2>
         <form onSubmit={this.handleSubmit}>
           {this.renderTextInput("email", "Email", "email")}
           {this.renderTextInput("password", "Password", "password")}
@@ -46,6 +46,10 @@ class CustomerLogin extends FormInput {
           <br />
           <Link to="/customer/change/password" style={{ color: "white" }}>
             forgot password
+          </Link>
+          <br />
+          <Link to="/customer/signup" style={{ color: "white" }}>
+            i do not have a customer account
           </Link>
         </form>
       </div>

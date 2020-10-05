@@ -1,6 +1,9 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable react/destructuring-assignment */
+// eslint-disable-next-line class-methods-use-this
+
 import React, { Component } from "react";
 import Joi from "joi-browser";
 
@@ -109,7 +112,6 @@ class FormInput extends Component {
     );
   }
 
-  // eslint-disable-next-line class-methods-use-this
   renderFileInput(name) {
     return (
       <>

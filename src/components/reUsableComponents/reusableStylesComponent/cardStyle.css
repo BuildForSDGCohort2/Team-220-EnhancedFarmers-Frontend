@@ -6,11 +6,11 @@
 
 .card .labels {
   display: flex;
+  justify-content: space-around;
 }
-.card .labels .label {
-  margin-right: 30px;
-}
+
 .card .buttons {
   display: flex;
   justify-content: space-evenly;
+  margin: 10px;
 }

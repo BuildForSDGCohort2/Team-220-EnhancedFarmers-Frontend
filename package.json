@@ -33,7 +33,7 @@
     "npm": "6.14.8"
   },
   "scripts": {
-    "dev": "node server.js",
+    "start1": "node server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
