@@ -86,6 +86,7 @@ class investorsTable extends CompleteTable {
         <Link className="btn btn-primary" to="/investors/register">
           create investor
         </Link>
+        <h1>Our esteemed investors</h1>
         {this.renderTable()}
       </div>
     );

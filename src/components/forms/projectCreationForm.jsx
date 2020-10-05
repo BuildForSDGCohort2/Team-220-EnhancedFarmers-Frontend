@@ -12,9 +12,9 @@ import "./formStyles/centerContent.css";
 class ProjectCreation extends FormInput {
   state = {
     data: {
-      farmer_id: 1,
-      profesional_id: 1,
-      investor_id: 1,
+      farmer_id: "",
+      profesional_id: "",
+      investor_id: "",
       name: "",
       product_category: "",
       amount: "",
@@ -29,9 +29,9 @@ class ProjectCreation extends FormInput {
   };
 
   schema = {
-    farmer_id: Joi.number().required().label("Farmer"),
-    profesional_id: Joi.number().required().label("Professional"),
-    investor_id: Joi.number().required().label("Investor"),
+    farmer_id: Joi.string().required().label("Farmer"),
+    profesional_id: Joi.string().required().label("Professional"),
+    investor_id: Joi.string().required().label("Investor"),
     name: Joi.string().required().label("Project Name"),
     product_category: Joi.string().required().label("Category"),
     amount: Joi.number().required().label("Amount"),

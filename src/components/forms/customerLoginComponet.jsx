@@ -47,6 +47,10 @@ class CustomerLogin extends FormInput {
           <Link to="/customer/change/password" style={{ color: "white" }}>
             forgot password
           </Link>
+          <br />
+          <Link to="/customer/signup" style={{ color: "white" }}>
+            i do not have a customer account
+          </Link>
         </form>
       </div>
     );

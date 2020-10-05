@@ -36,9 +36,7 @@ class PendingOrdersTable extends CompleteTable {
       path: "status",
       label: "Status",
       content: (order) => (
-        <Link to={`/order/admin_change/status/${order.id}`}>
-          {order.status}
-        </Link>
+        <Link to={`/order/change/status/${order.id}`}>{order.status}</Link>
       ),
     },
     {
@@ -97,7 +95,12 @@ class PendingOrdersTable extends CompleteTable {
   };
 
   render() {
-    return <div className="container bg-light">{this.renderTable()}</div>;
+    return (
+      <div className="container bg-light">
+        <h2>All New orders here</h2>
+        {this.renderTable()}
+      </div>
+    );
   }
 }
 

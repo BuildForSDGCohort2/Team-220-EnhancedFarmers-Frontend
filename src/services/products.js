@@ -21,7 +21,7 @@ export const getSingleProduct = (itemId) =>
   https.get(`${productsUrl}/${itemId}`);
 
 export const getProductsByCatory = (category) =>
-  https.get(`${productsUrl}/?category=${category}`);
+  https.get(`${productsUrl}/category?category=${category}`);
 
 export const deleteProduct = (itemId) =>
   https.delete(`${productsUrl}/${itemId}`);

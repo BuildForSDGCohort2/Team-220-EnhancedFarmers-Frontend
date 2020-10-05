@@ -26,7 +26,7 @@ class ProductPage extends DisplayItems {
     return (
       <>
         <div>
-          {user && (user.isAdmin || user.isAdmin === 0) ? (
+          {user && (user.isAdmin || user.isAdmin === false) ? (
             <Link
               to="/products/register"
               className="btn btn-primary"
@@ -37,6 +37,7 @@ class ProductPage extends DisplayItems {
           ) : (
             ""
           )}
+          <h2>Our Products</h2>
           {this.returnedContent()}
         </div>
       </>

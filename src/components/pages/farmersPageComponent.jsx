@@ -85,13 +85,19 @@ class FarmersPage extends CompleteTable {
   componentDidMount = async () => {
     const { data } = await getAllFarmers();
 
+    const { user } = this.props;
+    if (user && user.isAdmin) this.columns.push(this.delete);
+
     this.setState({ items: data.data, columns: this.columns });
   };
 
   render() {
-    const { user } = this.props;
-    if (user && user.isAdmin) this.columns.push(this.delete);
-    return <div className="container bg-light">{this.renderTable()}</div>;
+    return (
+      <div className="container bg-light">
+        <h1>All Farmers here</h1>
+        {this.renderTable()}
+      </div>
+    );
   }
 }
 

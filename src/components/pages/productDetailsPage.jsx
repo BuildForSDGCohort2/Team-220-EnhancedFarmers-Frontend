@@ -2,12 +2,12 @@
 import React from "react";
 import Joi from "joi-browser";
 import { toast } from "react-toastify";
+import { Redirect } from "react-router-dom";
 
 import { url } from "../../config.json";
 import FormInput from "../reUsableComponents/formComponent";
 import Card from "../reUsableComponents/displaySingleitemComponent";
 
-import auth from "../../services/authServices";
 import {
   getSingleProduct,
   getProductsByCatory,
@@ -74,17 +74,16 @@ class ProductDetails extends FormInput {
     const productId = this.props.match.params.id;
     const { data } = await getSingleProduct(productId);
     const products = await getProductsByCatory(data.data.category);
-    const currentUser = await auth.getCurrentUser();
 
     this.setState({
       product: data.data,
       products: products.data.data,
-      user: currentUser,
     });
   };
 
   render() {
-    const { products, user } = this.state;
+    const { user } = this.props;
+    const { products } = this.state;
     const {
       id,
       name,
@@ -93,6 +92,10 @@ class ProductDetails extends FormInput {
       category,
       price,
     } = this.state.product;
+
+    console.log(user);
+
+    if (!user || !user.username) return <Redirect to="/customer/login" />;
 
     return (
       <>

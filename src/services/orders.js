@@ -15,10 +15,10 @@ export const adminChangeStaus = (orderId, status) => {
   return https.patch(updateUrl, status);
 };
 
-export const adminChangeBidPrice = (orderId, status) => {
+export const adminChangeBidPrice = (orderId, price) => {
   const updateUrl = `${orderUrl}/${orderId}/price`;
 
-  return https.patch(updateUrl, status);
+  return https.patch(updateUrl, price);
 };
 
 export const getAllOrdersByCustomer = (customerId) => {

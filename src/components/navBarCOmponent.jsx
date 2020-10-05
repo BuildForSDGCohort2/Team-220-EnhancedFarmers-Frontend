@@ -35,14 +35,23 @@ const NavBar = ({ user }) => (
             Category
           </Link>
           <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <Link className="dropdown-item text-white" to="/products">
-              frults
+            <Link
+              className="dropdown-item text-white"
+              to="/categories/?category=fruilts"
+            >
+              fruilts
             </Link>
-            <Link className="dropdown-item text-white" to="products">
+            <Link
+              className="dropdown-item text-white"
+              to="/categories?category=vegitables"
+            >
               Vegitables
             </Link>
             <div className="dropdown-item" />
-            <Link className="dropdown-item text-white" to="/">
+            <Link
+              className="dropdown-item text-white"
+              to="/categories?category=fish"
+            >
               Fish
             </Link>
           </div>
@@ -177,7 +186,7 @@ const NavBar = ({ user }) => (
             </li>
           </>
         )}
-        {user && user.isAdmin === 0 && (
+        {user && user.isAdmin === false && (
           <>
             <li className="nav-item">
               <NavLink
@@ -221,6 +230,21 @@ const NavBar = ({ user }) => (
               </NavLink>
             </li>
           </>
+        )}
+        {user && Object.entries(user).length === 3 && (
+          <li className="nav-item">
+            <NavLink
+              className="nav-link text-white"
+              to="/projects"
+              activeStyle={{
+                fontWeight: "bold",
+                backgroundColor: "darkgreen",
+                borderRadius: 5,
+              }}
+            >
+              Projects
+            </NavLink>
+          </li>
         )}
         {user && user.username && (
           <li className="nav-item">
